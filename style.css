@@ -184,9 +184,10 @@ section {
 
 .section__pic-container {
   display: flex;
-  height: 400px;
-  width: 400px;
+  height: 600px;
+  width: 600px;
   margin: auto 0;
+
 }
 
 .section__text {
@@ -284,7 +285,7 @@ section {
 
 .about-containers {
   gap: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   margin-top: 2rem;
 }
 
@@ -322,19 +323,15 @@ section {
   height: 80%;
 }
 
-.section__pic-container {
-  height: 400px;
-  width: 400px;
-  margin: auto 0;
-}
+
 
 /* EXPERIENCE SECTION */
 
-#experience {
+#sop {
   position: relative;
 }
 
-#experience .download-btn {
+#sop .download-btn {
     display: inline-block;
     padding: 10px 20px;
     background-color: #6a0dad; /* Purple background */
@@ -344,11 +341,11 @@ section {
     font-size: 16px; /* Adjust font size */
     border-radius: 8px;
     transition: background-color 0.3s ease;
-    float: right;
     margin-top: 20px;
+    margin-bottom: 80px;
 }
 
-#experience .download-btn:hover {
+#sop .download-btn:hover {
     background-color: #5a0cae; /* Darker purple on hover */
     cursor: pointer; /* Pointer cursor on hover */
 }

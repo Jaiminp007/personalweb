@@ -15,7 +15,6 @@
         <ul class="nav-links">
           <li><a href="#sop">Statement of Purpose</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -29,23 +28,23 @@
           <span></span>
         </div>
         <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">Statement of Purpose</a></li>
+          <li><a href="#sop" onclick="toggleMenu()">SOP</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">About</a></li>
           <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
         </div>
       </div>
     </nav>
     <section id="profile">
       <div class="section__pic-container fade-in">
-        <img src="en3n1jbimtgo1k34atlbnr22e5.png" alt="Shubham Malhotra profile picture" />
+        <img src="./assets/Untitled design.png" alt="Shubham Malhotra profile picture" />
       </div>
       <div class="section__text fade-in">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Jaimin Patel</h1>
         <div class="btn-container">
-          <button class="btn btn-color-2" onclick="window.open('Resume.docx.pdf')"
-          >Download Resume</button>
+          <a href="./assets/Resume.pdf" target="_blank">
+          <button class="btn btn-color-2"
+          >Download Resume</button></a>
           <button class="btn btn-color-1" onclick="location.href='./#contact'">
             Contact Info
           </button>
@@ -53,7 +52,7 @@
         </div>
         <div id="socials-container">
           <img
-            src="github.png"
+            src="./assets/github.png"
             alt="My Github profile"
             class="icon"
             onclick="location.href='https://github.com/Jaiminp007'"
@@ -61,7 +60,7 @@
         </div>
       </div>
     </section>
-    <section id="experience">
+    <section id="sop">
       <div class="experience-details-container fade-in">
         <h1 class="title fade-in">Statement of Purpose</h1>
         <p>The aspiration is to become an entrepreneur who combines depth of technical expertise with width of financial knowledge to create applications, systems, processes, and even products that will help mitigate risk and extract the best return on investment. Fully grasping that this is a tall order, I seek to put a base under this castle in the air with the finest education. The application to the Bachelor of Information(BI) program at the University of Toronto is my first step in this direction.</p>
@@ -82,7 +81,7 @@
 
         <p>I realize that my imagination will define how far I go, and I seek to reach the tallest heights.</p>
 
-        <a href="SOP.pdf" download="jaimin_patel_sop.pdf" target="_blank" class="download-btn fade-in">Download SOP</a>
+        <a href="./assets/SOP.pdf" download="jaimin_patel_sop.pdf" target="_blank" class="download-btn fade-in">Download sop</a>
 
     </section>
     <section id="projects">
@@ -93,132 +92,64 @@
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/flappy.png"
+                src="./assets/BudgeBuddy.png"
                 alt="Project 1"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Flappy Bird</h2>
+            <h2 class="experience-sub-title project-title">BudgeBuddy</h2>
             <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/QTMushy/FlappyBird'"
-              >
+              <a href="https://www.amazon.com/dp/B0DJ32NFX5/ref=apps_sf_sta" target="_blank">
+              <button class="btn btn-color-2 project-btn">
                 Github
               </button>
+              </a>
+              <a href="https://www.amazon.com/dp/B0DJ32NFX5/ref=apps_sf_sta" target="_blank">
+              <button class="btn btn-color-2 project-btn">
+                Link
+              </button>
+              </a>
       
             </div>
           </div>
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/DALL·E 2023-11-14 01.07.57 - A creative visualization for a project related to scraping Formula 1 drivers' points and other information. The image shows a sleek, modern dashboard .png"
+                src="./assets/RP.png"
                 alt="Project 2"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">F1 Stats Analyser</h2>
+            <h2 class="experience-sub-title project-title">Research Paper</h2>
             <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/QTMushy/FormulaOneDrivers'">
-                Github
+              <a href="https://zenodo.org/records/13712849" target="_blank">
+              <button class="btn btn-color-2 project-btn">
+                Link
               </button>
+              </a>
   
             </div>
           </div>
           <div class="details-container color-container">
             <div class="article-container">
               <img
-                src="./assets/Screenshot 2023-11-14 011235.png"
+                src="./assets/edith.jpg"
                 alt="Project 3"
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Adopt Me!</h2>
+            <h2 class="experience-sub-title project-title">EDITH</h2>
             <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/QTMushy/adopt-me'">
+              <a href="https://github.com/Jaiminp007/EDITH-Even-Dead-Im-Alive-" target="_blank">
+              <button class="btn btn-color-2 project-btn">
                 Github
               </button>
+            </a>
     
             </div>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
-    </section>
-    <section id="about">
-      <p class="section__text__p1 fade-in">Get To Know More</p>
-      <h1 class="title fade-in">About Me</h1>
-      <div class="section-container fade-in">
-        <div class="section__pic-container">
-          <img
-            src="./assets/IMG_1975.jpeg"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>8 months <br/>Software Intern at KoolHaus Games</p>
-            </div>
-            <div class="details-container">
-              <img src="./assets/experience.png" alt="Experience icon" class="icon" />
-              <h3>Experience</h3>
-              <p>Present<br />Cloud Engineer at Royal Bank of Canada</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>Bachelors of Computer Science<br />University of Windsor</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              🌐 Passionate Web Developer & Cloud Engineer with a dynamic background in creating user-centric web applications and
-              scalable cloud solutions. My career spans roles at KoolHaus Games Inc., RBC, and the University of Windsor, where I've
-              built impactful projects using cutting-edge technologies.<br>
-              
-              💻 At KoolHaus Games Inc., I was instrumental in developing a game with over 5 million downloads, utilizing technologies
-              such as Unity, Objective C and XCode. My focus on intuitive design and optimized performance significantly improved
-              user experience.<br>
-              
-              ☁️ As a Cloud Engineer at RBC, I worked on OpenShift cloud development, enabling seamless, scalable infrastructure that
-              supports modern app deployment.<br>
-              
-              👨‍🏫 At the University of Windsor, I guided students through Data Structures and Algorithms, fostering a collaborative
-              and inclusive learning environment.<br>
-              
-              🔧 My technical expertise includes JavaScript, React.js, Node.js, MySQL, MongoDB, and cloud technologies like OpenShift.
-              I constantly explore new methodologies to stay at the forefront of development trends.<br>
-              
-              🚀 I'm eager for opportunities in web and cloud development that challenge me and allow me to contribute to innovative
-              projects, especially in gaming, education, or automation.
-
-            </p>
-          </div>
-        </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
     </section>
 
     <section id="contact">
@@ -231,30 +162,12 @@
             alt="Email icon"
             class="icon contact-icon email-icon"
           />
-          <p><a href="mailto:malhot91@uwindsor.ca">malhot91@uwindsor.ca</a></p>
-        </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com/in/shubham-malhotra-0a915222b/">LinkedIn</a></p>
+          <p><a href="mailto:jaimin.patel.9568@gmail.com">jaimin.patel.9568@gmail.com</a></p>
         </div>
       </div>
     </section>
     <footer>
-      <nav>
-        <div class="nav-links-container fade-in">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2024 Shubham Malhotra. All Rights Reserved.</p>
+      <p>Copyright &#169; 2024 Jaimin Patel. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
   </body>
