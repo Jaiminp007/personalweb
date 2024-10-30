@@ -51,6 +51,10 @@
     #about {
       margin: 5rem;
     }
+    .btn{
+      width: 6.5rem;
+      border-radius: 2rem;
+    }
   }
   
   @media screen and (max-width: 900px) {
