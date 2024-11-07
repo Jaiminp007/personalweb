@@ -4,6 +4,12 @@ function toggleMenu() {
     menu.classList.toggle("open");
     icon.classList.toggle("open");
   }
+
+  function scrollToSection() {
+    document.getElementById("contact").scrollIntoView({
+      behavior: "smooth"
+    });
+  }
   
   function handleScrollAnimation() {
     const elements = document.querySelectorAll('.fade-in');
