@@ -55,6 +55,15 @@
       width: 6.5rem;
       border-radius: 2rem;
     }
+    .carousel-wrapper {
+      padding: 0 40px;
+    }
+  
+    #projects-carousel .details-container {
+      flex: 0 0 calc((100% - 2rem) / 2);
+      min-width: calc((100% - 2rem) / 2);
+      max-width: calc((100% - 2rem) / 2);
+    }
   }
   
   @media screen and (max-width: 900px) {
@@ -81,7 +90,7 @@
           }
   }
   
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 768px) {
     #contact,
     footer {
       height: auto;
@@ -148,5 +157,20 @@
   
     #section {
       margin: 5rem;
+    }
+    .carousel-wrapper {
+      padding: 0 30px;
+    }
+  
+    #projects-carousel .details-container {
+      flex: 0 0 100%;
+      min-width: 100%;
+      max-width: 100%;
+    }
+  
+    .carousel-btn {
+      width: 35px;
+      height: 35px;
+      font-size: 1rem;
     }
   }
