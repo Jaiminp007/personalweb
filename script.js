@@ -138,3 +138,132 @@ function toggleMenu() {
     // Initialize the carousel
     goToSlide(0);
   });
+
+  // Ticker shows tech stacks with colored symbol pills; cards show symbol + language chips
+  document.addEventListener('DOMContentLoaded', function() {
+    // Helper: deterministic PRNG for repeatable values across reloads
+    function xorshift32(seed) {
+      let x = seed | 0;
+      return function() {
+        x ^= x << 13; x ^= x >>> 17; x ^= x << 5;
+        // Convert to [0,1)
+        return ((x >>> 0) / 4294967296);
+      };
+    }
+
+    function hashCode(str) {
+      let h = 2166136261;
+      for (let i = 0; i < str.length; i++) {
+        h ^= str.charCodeAt(i);
+        h = (h * 16777619) >>> 0; // FNV-1a like
+      }
+      return h;
+    }
+
+    function makeSymbol(title) {
+      const letters = title.replace(/[^A-Za-z]/g, '').toUpperCase();
+      if (!letters) return 'PRJ';
+      const parts = letters.split(/\s+/).filter(Boolean);
+      if (parts.length > 1) {
+        return (parts[0][0] + parts[1][0] + (parts[2]?.[0] || '')).slice(0,4);
+      }
+      return letters.slice(0,4);
+    }
+
+    // Removed sparkline/series generation; switching to language tags
+
+    // Build ticker items and inject meta per card
+    const projectCards = document.querySelectorAll('#projects-carousel .details-container');
+    const tickerTrack = document.querySelector('#stock-ticker .ticker-track');
+    const items = [];
+
+    // Static ticker entries requested (navbar ticker)
+    const staticTicker = [
+      { sym: 'RESE', label: 'Research' , pill: 'pill-rese', chips: ['Research'] },
+      { sym: 'LOGI', label: 'HTML/CSS/JS', pill: 'pill-logi', chips: ['HTML/CSS/JS'] },
+      { sym: 'NNRE', label: 'n8n / Node.js', pill: 'pill-nnre', chips: ['n8n','Node.js'] },
+      { sym: 'EDIT', label: 'JS', pill: 'pill-edit', chips: ['JS'] },
+      { sym: 'ALGO', label: 'Python / AI', pill: 'pill-algo', chips: ['Python','AI'] },
+      { sym: 'MOOD', label: 'MoodMate', pill: 'pill-mood', chips: ['Python','Flask'] },
+      { sym: 'BLOC', label: 'Blockchain Viz', pill: 'pill-bloc', chips: ['JS','D3.js'] },
+      { sym: 'BUDG', label: 'BudgeBuddy', pill: 'pill-budg', chips: ['React Native'] },
+    ];
+
+    // Map specific projects to pill classes for colored card meta
+    function symbolPillFor(title) {
+      const t = title.toLowerCase();
+      if (t.includes('research')) return 'pill-rese';
+      if (t.includes('login')) return 'pill-logi';
+      if (t.includes('n8n')) return 'pill-nnre';
+  if (t.includes('edith')) return 'pill-edit';
+  if (t.includes('mood')) return 'pill-mood';
+  if (t.includes('blockchain') || t.includes('visual')) return 'pill-bloc';
+  if (t.includes('budg')) return 'pill-budg';
+      if (t.includes('algo')) return 'pill-algo';
+      return 'pill-generic';
+    }
+
+    projectCards.forEach((card) => {
+      const titleEl = card.querySelector('.project-title, .project-title-small');
+      const title = titleEl ? titleEl.textContent.trim() : 'Project';
+      const seed = hashCode(title);
+      const rand = xorshift32(seed);
+      const symbol = makeSymbol(title);
+      const languages = inferLanguages(title, card);
+
+      // Inject meta row
+      const meta = document.createElement('div');
+      meta.className = 'stock-meta';
+      const pill = symbolPillFor(title);
+      meta.innerHTML = `
+        <span class="symbol-pill ${pill}">${symbol}</span>
+        <span class="ticker-lang">${languages.map(l => `<span class="chip">${l}</span>`).join('')}</span>
+      `;
+      const imgContainer = card.querySelector('.article-container');
+      if (imgContainer) imgContainer.after(meta);
+
+      // Save ticker item with languages
+      items.push({ symbol, languages });
+    });
+
+    // Populate the marquee-like ticker by duplicating items to loop
+    if (tickerTrack) {
+      const renderStatic = () => staticTicker.map(t => `
+        <span class="ticker-item">
+          <span class="symbol-pill ${t.pill}">${t.sym}</span>
+          <span class="ticker-lang">${t.chips.map(c => `<span class=\"chip\">${c}</span>`).join('')}</span>
+        </span>
+      `).join('');
+      // Duplicate for seamless marquee
+      tickerTrack.innerHTML = renderStatic() + renderStatic();
+    }
+
+    function inferLanguages(title, card) {
+      const t = title.toLowerCase();
+      const text = (title + ' ' + card.innerText).toLowerCase();
+      const langs = [];
+      const add = (l) => { if (!langs.includes(l)) langs.push(l); };
+
+      // Project-specific hints
+      if (t.includes('algoclash')) { add('Python'); add('AI'); }
+      if (t.includes('moodmate')) { add('Python'); add('Flask'); }
+      if (t.includes('blockchain')) { add('JS'); add('D3.js'); }
+      if (t.includes('budgebuddy') || t.includes('budgetbuddy')) { add('React Native'); }
+      if (t.includes('login')) { add('HTML/CSS/JS'); }
+  if (t.includes('n8n')) { add('n8n'); add('Node.js'); }
+      if (t.includes('edith')) { add('JS'); }
+      if (t.includes('research')) { add('Research'); }
+
+      // Generic keyword matches
+      if (/react native|expo/.test(text)) add('React Native');
+      if (/react|jsx|next\.js/.test(text)) add('React');
+      if (/node|express/.test(text)) add('Node.js');
+      if (/python/.test(text)) add('Python');
+      if (/flask|django|fastapi/.test(text)) add('Flask');
+      if (/d3|visuali[sz]ation/.test(text)) add('D3.js');
+      if (/html|css|javascript/.test(text)) add('HTML/CSS/JS');
+
+      if (!langs.length) add('JS');
+      return langs.slice(0,3);
+    }
+  });

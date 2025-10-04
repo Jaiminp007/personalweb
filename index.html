@@ -34,6 +34,10 @@
         </div>
       </div>
     </nav>
+    <!-- Tech ticker directly below navbar -->
+    <div id="stock-ticker" class="stock-ticker fade-in" aria-label="Tech ticker">
+      <div class="ticker-track"></div>
+    </div>
     <section id="profile">
       <div class="section__pic-container fade-in">
         <img src="./assets/Untitled design.png" alt="Jaimin Patel profile picture" />
@@ -61,9 +65,9 @@
           <button class="btn-social-linkedin">
             <img
             src="./assets/linkedin.png"
-            alt="My Github profile"
+            alt="My LinkedIn profile"
             class="icon"
-            onclick="location.href='https://github.com/Jaiminp007'"
+            onclick="location.href='https://www.linkedin.com/in/jaimin-patel-5a126a2b2/'"
           />
           </button>
         </div>
@@ -73,27 +77,15 @@
       <div class="experience-details-container fade-in">
         <h1 class="title fade-in">About</h1>
         <div class="about-text-container">
-          <p>The aspiration is to become an entrepreneur who combines depth of technical expertise with width of financial knowledge to create applications, systems, processes, and even products that will help mitigate risk and extract the best return on investment. Fully grasping that this is a tall order, I seek to put a base under this castle in the air with the finest education. The application to the Bachelor of Applied Science (BASc) in Computer Engineering at the University of Toronto is my first step in this direction.</p>
-          
-          <p>A walk back will throw light on my ambition and chosen path. Growing up, Mathematics was my strong suit. Logic came to me naturally, and I was easily able to apply learning to solving problems; the strong score in my 10th-grade board exams is a function of this ability. How to put this to use was a question that I often asked, and my mother and brother both had ideas.</p>
-          
-          <p>My mother is a homemaker. Managing a joint family with 4 members, she runs a tight ship, delivering all that we want and still able to organize social events. Money is not a problem—my father is a real estate developer—but my mother always says we work hard for the money and so it must deliver to the hilt. She always asked me for help with the family budget and making purchase decisions.</p>
-          
-          <p>On the other hand, my elder brother is a computer engineer. He loves the realm and shared his love, thus also infecting me. I took to Python like fish to water. Two years of studying did not seem like studying at all; I looked forward to the classes and often spent hours on end working on projects and exercises. In discussion with my brother about possible career options, I mentioned that Computers and Finance were both equally important. He suggested I should combine the two.</p>
+          <p>
+            I’m Jaimin Patel, studying at the University of Waterloo—working at the intersection of computer science and finance. I’m driven by a simple idea: build tools that make complex decisions easier and outcomes more transparent.
+          </p>
         </div>
-
+        
         <div class="about-text-container">
-          <p>Thinking of what he said, I asked several friends about the need for an application to help with budgets. I have experienced this as a member of the school basketball team and also as a delegate at an MUN, but more of that later. So I began working on an application to help manage budgets. I used React Native for development, and when stuck, I asked my teacher and even my brother and mother. The development and debugging process was not easy, but it did not feel like work. One significant challenge was my initial plan to launch the app on Google Play Store, which required 20 testers to test the app for 14 days. As a high school student, gathering 20 testers was quite difficult. Undeterred, I adapted and published BudgeBuddy on the Amazon App Store instead. The key issues that emerged were integrating the API data, ensuring seamless user interaction, and improving the user experience. I loved every minute of this and realized that I wanted to build a career in using computer science to build applications in the business, particularly the finance field.</p>
-
-          <p>Moreover, I have a keen interest in environmental issues, which led me to write a research paper titled "Environmental Pollution from Constructing Renewable Energy Projects." This was a new experience for me, and I sought guidance from my social science teacher, Mrs. Mousumi Chatterjee. Her insights were invaluable in deepening my understanding of environmental concerns and honing my research and analytical skills. I published this paper on the Zenodo platform online.</p>
-        </div>
-
-        <div class="about-text-container">
-          <p>To get such flexibility and in-depth knowledge, I looked outside India and found that Canada is my choice. My brother's experiences studying in Canada have helped me to make this choice. I have examined the offerings in terms of subjects, faculty, and infrastructure at the University of Toronto and find it ideal for me. The possibility of engaging in the research of Professor Andreas Veneris and Professor Natalie Enright Jerger is also a big draw. I will meet others from across the world and evolve into a world citizen; this is also very important to me. Thus, I apply to the University and Program. To do well, I have a strong background of academic preparation—that is not all.</p>
-
-          <p>Being a key member of the runner-up team of the state-level basketball tournament "Khel Mahakhumb" and having played (both won and lost) several games as a school team member, I am good at both leading and following. I know when to hang back and when to charge. I can take both defeat and successes as a sportsman should. I have learned to learn from both. Another experience that has showcased that I can overcome what I believe are my limitations is the High Commendation for the UNEP Committee at a recent MUN. Public speaking was not my forte, but pushed into participating, I prepared with gusto and got recognized.</p>
-
-          <p>I realize that my imagination will define how far I go, and I seek to reach the tallest heights.</p>
+          <p>
+            Right now, I’m exploring algorithmic trading systems, data visualization, and human‑centered design—translating noisy data into clear narratives and smarter actions. I enjoy working with Python, JavaScript/TypeScript, React/React Native, Node.js, and automation tools like n8n, and I’m especially interested in backtesting frameworks, agent simulations, and explainable dashboards.
+          </p>
         </div>
       </div>
     </section>
@@ -104,6 +96,67 @@
         <button class="carousel-btn prev-btn"><img src="./assets/right-arrow.png" alt="Previous" class="arrow-icon left-arrow"></button>
         <div class="experience-details-container fade-in">
           <div class="about-containers" id="projects-carousel">
+            <!-- 1. AlgoClash first -->
+            <div class="details-container color-container">
+              <div class="article-container">
+                <img
+                  src="./assets/projects/algo-clash.png"
+                  alt="AlgoClash - AI Trader Battlefield"
+                  class="project-img"
+                />
+              </div>
+              <h2 class="experience-sub-title project-title">AlgoClash: Where Code Collides</h2>
+              <div class="btn-container">
+                <a href="https://github.com/Jaiminp007/AlgoClash-Where-Code-Collides" target="_blank">
+                  <button class="btn btn-color-2 project-btn">Github</button>
+                </a>
+                <a href="https://ai-trader-battlefield-fro.onrender.com/" target="_blank">
+                  <button class="btn btn-color-2 project-btn">Link</button>
+                </a>
+              </div>
+            </div>
+
+            <!-- 2. MoodMate second -->
+            <div class="details-container color-container">
+              <div class="article-container">
+                <img
+                  src="./assets/projects/moodmate.png"
+                  alt="MoodMate"
+                  class="project-img"
+                />
+              </div>
+              <h2 class="experience-sub-title project-title">MoodMate</h2>
+              <div class="btn-container">
+                <a href="https://github.com/Jaiminp007/moodmate" target="_blank">
+                  <button class="btn btn-color-2 project-btn">Github</button>
+                </a>
+                <a href="https://moodmate-1-y9lx.onrender.com/" target="_blank">
+                  <button class="btn btn-color-2 project-btn">Link</button>
+                </a>
+              </div>
+            </div>
+
+            <!-- 3. Blockchain Visualization third -->
+            <div class="details-container color-container">
+              <div class="article-container">
+                <img
+                  src="./assets/projects/blockchain.png"
+                  alt="Project 3"
+                  class="project-img"
+                />
+              </div>
+              <h2 class="experience-sub-title project-title-small">Blockchain Encryption Visualisation</h2>
+              <div class="btn-container">
+                <a href="https://github.com/Jaiminp007/Blockchain-Encryption-Visualization" target="_blank">
+                  <button class="btn btn-color-2 project-btn">Github</button>
+                </a>
+                <a href="https://blockchain-tiz1.onrender.com/" target="_blank">
+                  <button class="btn btn-color-2 project-btn">Link</button>
+                </a>
+              </div>
+            </div>
+
+            <!-- 4. BudgeBuddy fourth -->
             <div class="details-container color-container">
               <div class="article-container">
                 <img
@@ -122,7 +175,8 @@
                 </a>
               </div>
             </div>
-            
+
+            <!-- Remaining projects -->
             <div class="details-container color-container">
               <div class="article-container">
                 <img
@@ -134,25 +188,6 @@
               <h2 class="experience-sub-title project-title">Research Paper</h2>
               <div class="btn-container">
                 <a href="https://zenodo.org/records/13712849" target="_blank">
-                  <button class="btn btn-color-2 project-btn">Link</button>
-                </a>
-              </div>
-            </div>
-            
-            <div class="details-container color-container">
-              <div class="article-container">
-                <img
-                  src="./assets/projects/blockchain.png"
-                  alt="Project 3"
-                  class="project-img"
-                />
-              </div>
-              <h2 class="experience-sub-title project-title-small">Blockchain Encryption Visualisation</h2>
-              <div class="btn-container">
-                <a href="https://github.com/Jaiminp007/Blockchain-Encryption-Visualization" target="_blank">
-                  <button class="btn btn-color-2 project-btn">Github</button>
-                </a>
-                <a href="https://blockchain-tiz1.onrender.com/" target="_blank">
                   <button class="btn btn-color-2 project-btn">Link</button>
                 </a>
               </div>
@@ -234,7 +269,7 @@
       </div>
     </section>
     <footer>
-      <p>Copyright &#169; 2024 Jaimin Patel. All Rights Reserved.</p>
+      <p>Copyright &#169; 2025 Jaimin Patel. All Rights Reserved.</p>
     </footer>
     <script src="script.js"></script>
   </body>
