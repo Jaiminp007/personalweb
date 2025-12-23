@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-accent: var(--accent);
+  --color-text-primary: var(--text-primary);
+  --color-highlight: var(--highlight);
+  --font-heading: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+}
+
+:root {
+  --background: #0B0C10;
+  --surface: #1F2833;
+  --accent: #66FCF1;
+  --text-primary: #C5C6C7;
+  --highlight: #45A29E;
+
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-2xl bg-[#1F2833]/60 border border-white/10 shadow-2xl;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(102, 252, 241, 0.5);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
+}
