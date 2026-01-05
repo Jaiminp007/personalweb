@@ -17,6 +17,9 @@ export default defineConfig(({ command }) => {
 			!isBuild && devtoolsJson()
 		].filter(Boolean),
 
-		server: { fs: { allow: ['.'] } }
+		server: { fs: { allow: ['.'] } },
+		build: {
+			sourcemap: false
+		}
 	};
 });
