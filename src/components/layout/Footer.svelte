@@ -1,5 +1,4 @@
-<script lang="ts">
-	import { PUBLIC_COMMIT_SHA } from '$env/static/public';
+	import { env } from '$env/dynamic/public';
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import Site, { Socials } from '$lib/config/common';
@@ -9,8 +8,8 @@
 	const { value } = $props();
 
 	const year = new Date().getFullYear();
-	const shortSha = PUBLIC_COMMIT_SHA ? PUBLIC_COMMIT_SHA.substring(0, 7) : 'dev';
-	const commitLinkUrl = PUBLIC_COMMIT_SHA ? `${Site.repo.commitBaseUrl}${PUBLIC_COMMIT_SHA}` : '#';
+	const shortSha = env.PUBLIC_COMMIT_SHA ? env.PUBLIC_COMMIT_SHA.substring(0, 7) : 'dev';
+	const commitLinkUrl = env.PUBLIC_COMMIT_SHA ? `${Site.repo.commitBaseUrl}${env.PUBLIC_COMMIT_SHA}` : '#';
 
 	let timeOnSite = $state('00:00');
 
@@ -101,13 +100,13 @@
 			</a>
 
 			<span class="text-surface0 hidden sm:inline">-</span>
-			{#if PUBLIC_COMMIT_SHA && PUBLIC_COMMIT_SHA !== 'dev'}
+			{#if env.PUBLIC_COMMIT_SHA && env.PUBLIC_COMMIT_SHA !== 'dev'}
 				<a
 					href={commitLinkUrl}
 					target="_blank"
 					rel="noopener noreferrer"
 					class="text-subtext1 hover:text-accent flex items-center gap-x-1 transition-colors duration-200"
-					title="View deployment commit ({PUBLIC_COMMIT_SHA})"
+					title="View deployment commit ({env.PUBLIC_COMMIT_SHA})"
 				>
 					<IconGitCommit size={18} stroke={1.5} class="flex-shrink-0" />
 					<span>{shortSha}</span>
