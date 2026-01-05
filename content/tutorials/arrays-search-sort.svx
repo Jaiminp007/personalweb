@@ -1,0 +1,313 @@
+~~~
+title = "Arrays, ArrayLists, and Searching in Java"
+description = "A practical tutorial on arrays, ArrayLists, and searching algorithms in Java, with implementation examples."
+published_at = "2025-04-20"
+tags = ["java", "arrays", "data structures", "algorithms", "searching"]
+
+[[sources]]
+title = "Oracle. (n.d.). The Java Tutorials"
+url = "https://docs.oracle.com/javase/tutorial/"
+
+[[sources]]
+title = "W3Schools. (n.d.). Java Tutorial"
+url = "https://www.w3schools.com/java/"
+
+[[sources]]
+title = "Tutorialspoint. (n.d.). Java Tutorial"
+url = "https://www.tutorialspoint.com/java/"
+~~~
+
+# Arrays, ArrayLists, and Searching in Java
+
+This tutorial covers fundamental data structures and algorithms in Java: arrays, ArrayLists, and searching techniques. Understanding these concepts is essential for efficient data manipulation and problem-solving in programming.
+
+## Arrays in Java
+
+An array is a fixed-size collection of elements of the same type. Arrays provide a convenient way to store and access multiple values using a single variable name.
+
+### Declaring and Initializing Arrays
+
+```java
+// Declaration
+int[] numbers;            // Preferred syntax
+int scores[];             // Alternative syntax
+
+// Initialization
+numbers = new int[5];     // Creates an array of 5 integers with default values (0)
+
+// Declaration and initialization in one line
+int[] values = new int[3];
+
+// Declaration and initialization with specific values
+int[] primes = {2, 3, 5, 7, 11};
+
+// Multi-dimensional arrays
+int[][] matrix = new int[3][4];  // 3 rows, 4 columns
+```
+
+### Accessing and Modifying Array Elements
+
+```java
+int[] numbers = {10, 20, 30, 40, 50};
+
+// Accessing elements (zero-based indexing)
+int firstElement = numbers[0];   // 10
+int thirdElement = numbers[2];   // 30
+
+// Modifying elements
+numbers[1] = 25;                 // Changes 20 to 25
+
+// Array length
+int length = numbers.length;     // 5
+
+// Iterating through an array
+for (int i = 0; i < numbers.length; i++) {
+    System.out.println(numbers[i]);
+}
+
+// Enhanced for loop (for-each)
+for (int num : numbers) {
+    System.out.println(num);
+}
+```
+
+<div class="flex justify-center my-8">
+    <div class="bg-base p-6 rounded-lg shadow-lg max-w-lg">
+        <h3 class="text-center text-xl font-bold mb-4">Array Visualization</h3>
+        <div class="flex flex-col items-center">
+            <div class="flex mb-2">
+                <div class="w-12 h-12 border-2 border-accent flex items-center justify-center font-bold">10</div>
+                <div class="w-12 h-12 border-2 border-accent flex items-center justify-center font-bold">25</div>
+                <div class="w-12 h-12 border-2 border-accent flex items-center justify-center font-bold">30</div>
+                <div class="w-12 h-12 border-2 border-accent flex items-center justify-center font-bold">40</div>
+                <div class="w-12 h-12 border-2 border-accent flex items-center justify-center font-bold">50</div>
+            </div>
+            <div class="flex">
+                <div class="w-12 text-center text-sm">0</div>
+                <div class="w-12 text-center text-sm">1</div>
+                <div class="w-12 text-center text-sm">2</div>
+                <div class="w-12 text-center text-sm">3</div>
+                <div class="w-12 text-center text-sm">4</div>
+            </div>
+            <div class="mt-4 text-center text-sm">
+                <p>Array indices (zero-based)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+### Limitations of Arrays
+
+1. **Fixed size**: Once created, the size of an array cannot be changed.
+2. **Homogeneous elements**: All elements must be of the same type.
+3. **Manual resizing**: To add more elements than the initial capacity, you need to create a new, larger array and copy the elements.
+
+## ArrayList in Java
+
+ArrayList is a part of Java's Collection Framework and provides a dynamic array implementation. Unlike arrays, ArrayLists can grow or shrink in size.
+
+### Creating and Using ArrayLists
+
+```java
+import java.util.ArrayList;
+
+// Creating an ArrayList
+ArrayList<Integer> numbers = new ArrayList<>();  // Empty ArrayList
+ArrayList<String> names = new ArrayList<>(20);   // Initial capacity of 20
+
+// Adding elements
+numbers.add(10);                  // Adds 10 to the end
+numbers.add(20);                  // Adds 20 to the end
+numbers.add(0, 5);                // Adds 5 at index 0, shifting other elements
+
+// Accessing elements
+int first = numbers.get(0);       // 5
+int second = numbers.get(1);      // 10
+
+// Modifying elements
+numbers.set(1, 15);               // Changes 10 to 15
+
+// Removing elements
+numbers.remove(0);                // Removes element at index 0
+numbers.remove(Integer.valueOf(20)); // Removes the first occurrence of 20
+
+// Size of ArrayList
+int size = numbers.size();        // Number of elements
+
+// Checking if an element exists
+boolean contains = numbers.contains(15);  // true
+
+// Iterating through an ArrayList
+for (int i = 0; i < numbers.size(); i++) {
+    System.out.println(numbers.get(i));
+}
+
+// Enhanced for loop
+for (Integer num : numbers) {
+    System.out.println(num);
+}
+```
+
+### ArrayList vs Array
+
+<div class="flex justify-center my-8">
+    <div class="bg-base px-6 py-2 rounded-lg shadow-lg max-w-xl">
+        <h3 class="text-center text-xl font-bold mb-4">Array vs ArrayList Comparison</h3>
+        <div class="overflow-x-auto">
+                    <table class="min-w-full border-2 border-accent">
+                        <thead>
+                            <tr class="bg-surface1">
+                                <th class="border-2 border-accent p-2">Feature</th>
+                                <th class="border-2 border-accent p-2">Array</th>
+                                <th class="border-2 border-accent p-2">ArrayList</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border-2 border-accent p-2">Size</td>
+                                <td class="border-2 border-accent p-2">Fixed</td>
+                                <td class="border-2 border-accent p-2">Dynamic</td>
+                            </tr>
+                            <tr>
+                                <td class="border-2 border-accent p-2">Type</td>
+                                <td class="border-2 border-accent p-2">Primitive & Objects</td>
+                                <td class="border-2 border-accent p-2">Objects only</td>
+                            </tr>
+                            <tr>
+                                <td class="border-2 border-accent p-2">Performance</td>
+                                <td class="border-2 border-accent p-2">Faster</td>
+                                <td class="border-2 border-accent p-2">Slower</td>
+                            </tr>
+                            <tr>
+                                <td class="border-2 border-accent p-2">Functionality</td>
+                                <td class="border-2 border-accent p-2">Basic</td>
+                                <td class="border-2 border-accent p-2">Rich methods</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+## Searching Algorithms
+
+Searching is the process of finding a specific element in a collection of elements. Let's explore two common searching algorithms.
+
+### Linear Search
+
+Linear search is the simplest searching algorithm that checks each element in the collection sequentially until the target element is found or the collection is exhausted.
+
+```java
+public static int linearSearch(int[] arr, int target) {
+    for (int i = 0; i < arr.length; i++) {
+        if (arr[i] == target) {
+            return i;  // Return the index of the found element
+        }
+    }
+    return -1;  // Element not found
+}
+```
+
+Linear search works on both sorted and unsorted arrays but is inefficient for large datasets.
+
+### Binary Search
+
+Binary search is an efficient algorithm for finding an element in a sorted array. It works by repeatedly dividing the search interval in half.
+
+```java
+public static int binarySearch(int[] arr, int target) {
+    int left = 0;
+    int right = arr.length - 1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+
+        // Check if target is present at mid
+        if (arr[mid] == target) {
+            return mid;
+        }
+
+        // If target is greater, ignore left half
+        if (arr[mid] < target) {
+            left = mid + 1;
+        }
+        // If target is smaller, ignore right half
+        else {
+            right = mid - 1;
+        }
+    }
+
+    return -1;  // Element not found
+}
+```
+
+<div class="flex justify-center my-8">
+    <div class="bg-base p-6 rounded-lg shadow-lg max-w-lg">
+        <h3 class="text-center text-xl font-bold mb-4">Binary Search Visualization</h3>
+        <div class="flex flex-col items-center">
+            <div class="flex mb-4">
+                <div class="w-10 h-10 border-2 border-accent flex items-center justify-center">10</div>
+                <div class="w-10 h-10 border-2 border-accent flex items-center justify-center">20</div>
+                <div class="w-10 h-10 border-2 border-accent flex items-center justify-center">30</div>
+                <div class="w-10 h-10 border-2 border-accent flex items-center justify-center bg-accent/20">40</div>
+                <div class="w-10 h-10 border-2 border-accent flex items-center justify-center">50</div>
+                <div class="w-10 h-10 border-2 border-accent flex items-center justify-center">60</div>
+                <div class="w-10 h-10 border-2 border-accent flex items-center justify-center">70</div>
+            </div>
+            <div class="flex mb-2">
+                <div class="w-10 text-center text-xs">left</div>
+                <div class="w-10"></div>
+                <div class="w-10"></div>
+                <div class="w-10 text-center text-xs">mid</div>
+                <div class="w-10"></div>
+                <div class="w-10"></div>
+                <div class="w-10 text-center text-xs">right</div>
+            </div>
+            <div class="mt-2 text-center text-sm">
+                <p>Searching for 40: Found at mid position!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+### Comparing Linear and Binary Search
+
+- **Linear Search**:
+  - Works on both sorted and unsorted arrays
+  - Simple to implement
+  - Inefficient for large datasets
+  - Checks each element one by one
+
+- **Binary Search**:
+  - Requires a sorted array
+  - More complex to implement
+  - Very efficient for large datasets
+  - Eliminates half of the remaining elements in each step
+
+## Using Java's Built-in Search Methods
+
+Java provides built-in methods for searching:
+
+```java
+// For arrays
+import java.util.Arrays;
+
+int[] numbers = {10, 20, 30, 40, 50};
+int index = Arrays.binarySearch(numbers, 30); // Returns 2
+
+// For ArrayLists
+ArrayList<Integer> list = new ArrayList<>(Arrays.asList(10, 20, 30, 40, 50));
+int position = list.indexOf(30); // Returns 2
+boolean contains = list.contains(60); // Returns false
+```
+
+## Conclusion
+
+Arrays and ArrayLists are fundamental data structures in Java, each with its own advantages and use cases. Arrays offer simplicity and performance, while ArrayLists provide flexibility and convenience.
+
+When it comes to searching, the choice between linear and binary search depends on:
+1. Whether the data is sorted
+2. The size of the dataset
+3. How frequently searches are performed
+
+For most applications, using Java's built-in search methods is recommended as they are optimized and well-tested. Understanding these concepts will help you write more efficient and effective Java programs.

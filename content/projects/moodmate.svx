@@ -1,0 +1,26 @@
+~~~
+title = "MoodMate"
+description = "A compassionate AI companion for mental wellness, mood tracking, and emotional support."
+date = "2024-07-15"
+published = true
+tags = ["Mental Health", "AI", "Mobile App", "React Native"]
+
+[image]
+url = "/projects/moodmate.png"
+alt = "MoodMate Interface"
+~~~
+
+# MoodMate 💚
+
+**MoodMate** is a mental wellness app that acts as a supportive companion for users navigating their emotional health.
+
+## Key Features
+- **Daily Mood Check-ins**: Track emotional well-being over time.
+- **AI Chatbot**: Conversational support trained on therapeutic techniques.
+- **Journaling**: Secure space for personal reflections.
+- **Mindfulness Exercises**: Guided breathing and meditation sessions.
+
+## Tech Stack
+- **Mobile**: React Native
+- **AI Backend**: Python, OpenAI API
+- **Database**: MongoDB

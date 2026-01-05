@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+@import '@fontsource/jetbrains-mono/latin-400.css'; /* Regular weight, Latin only */
+@import '@fontsource/jetbrains-mono/latin-700.css'; /* Bold weight, Latin only */
+@plugin '@tailwindcss/typography';
+@config './lib/styles/tailwind.config.js'; /*see https://github.com/tailwindlabs/tailwindcss-typography?tab=readme-ov-file#adding-custom-color-themes*/
+
+@theme {
+	--color-*: initial;
+} /* reset all colors to initial */
+@import '../static/css/catppuccin.css'; /*noqa: this line is supposed to be after the above @theme */
+@import '../static/css/colors.css'; /*contains the static colors needed for the color selector*/
+@plugin '@tailwindcss/forms';
+/*@plugin "@catppuccin/tailwindcss";*/ /*See https://github.com/catppuccin/tailwindcss/pull/22*/
+
+:root {
+	--current-accent-color: var(--color-peach); /*accent default's to peach */
+	--x: 100%;
+	--y: 100%;
+}
+
+@layer utilities {
+	.scrollbar {
+		scrollbar-width: thin;
+		scrollbar-color: var(--color-accent) transparent;
+	}
+
+	.scrollbar::-webkit-scrollbar-thumb {
+		border-radius: 100vh;
+	}
+
+	.scrollbar::-webkit-scrollbar-thumb:hover {
+		background-color: color-mix(in oklch, currentColor, var(--color-mantle));
+	}
+}
+
+@theme static {
+	--color-accent: var(--current-accent-color);
+}
+
+@theme {
+	--font-jetbrains-mono: 'JetBrains Mono', monospace;
+	--animate-wiggle: wiggle 1s ease-in-out infinite;
+	@keyframes wiggle {
+		0%,
+		100% {
+			transform: rotate(-3deg);
+		}
+		50% {
+			transform: rotate(3deg);
+		}
+	}
+}
+
+/*View Transitions */
+
+/* for firefox - match view transition timing */
+@utility bg-* {
+	@apply transition-colors duration-500 ease-in-out;
+}
+
+@utility text-* {
+	@apply transition-colors duration-500 ease-in-out;
+}
+
+@utility border-* {
+	@apply transition-colors duration-500 ease-in-out;
+}
+
+@utility ring-* {
+	@apply transition-colors duration-500 ease-in-out;
+}
+
+@utility text-normal {
+	font-size: var(--text-base); /* 1rem (16px) */
+	line-height: var(--text-base--line-height); /* calc(1.5 / 1) */
+}
+/* View transitions - instant crossfade for page navigation */
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation-duration: 0s;
+}
+
+/* Shared element transitions - smooth morph for titles and images */
+::view-transition-old(*):not(::view-transition-old(root)),
+::view-transition-new(*):not(::view-transition-new(root)) {
+	animation-duration: 0.6s;
+	animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	overflow: clip;
+}
+
+@utility link {
+	@apply text-accent hover:bg-accent hover:text-mantle decoration-dashed underline-offset-4 duration-200 not-hover:underline;
+}

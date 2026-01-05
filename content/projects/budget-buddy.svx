@@ -1,0 +1,38 @@
+~~~
+title = "BudgeBuddy"
+description = "A cross-platform personal finance management app built with React Native and Expo."
+date = "2024-02-01"
+published = true
+tags = ["React Native", "Expo", "TypeScript", "Finance"]
+
+[image]
+url = "/projects/BudgeBuddy.png"
+alt = "BudgeBuddy App"
+
+[[links]]
+text = "Repository"
+url = "https://github.com/Jaiminp007/BudgeBuddy_ReactNative_"
+icon = "github"
+
+[[links]]
+text = "Amazon Appstore"
+url = "https://www.amazon.com/dp/B0DJ32NFX5/ref=apps_sf_sta"
+icon = "external"
+~~~
+
+# BudgeBuddy
+
+**BudgeBuddy** is a cross-platform personal finance management app built with React Native and Expo. It helps users track cash, manage expenses, visualize spending trends, and provide feedback—all with a clean, modern UI.
+
+## 🚀 Features
+
+- **User Accounts:** Sign up, switch, and delete multiple user accounts.
+- **Cash Management:** Set and update your cash balance.
+- **Expense Tracking:** Add expenses with notes and dates.
+- **Top Expenses:** See your highest expenses at a glance.
+- **Currency Support:** Choose between Rupee, Dollar, Euro, and Pound.
+- **Visual Analytics:** Interactive line chart of your cash history.
+- **Persistent Storage:** All data is stored locally using AsyncStorage.
+- **Feedback Form:** Submit feedback directly from the app.
+- **Navigation Drawer:** Quick access to Dashboard, Feedback, Logout, and Delete Account.
+- **Responsive UI:** Works on Android, iOS, and Web.

@@ -1,0 +1,47 @@
+~~~
+title = "n8n Video Trimmer"
+description = "An n8n workflow for automatically creating and uploading short video clips from a YouTube video."
+date = "2025-01-01"
+published = true
+tags = ["n8n", "Automation", "OpenAI", "YouTube", "ffmpeg", "whisper"]
+
+[image]
+url = "/projects/n8n_video_trimmer.png"
+alt = "n8n Video Trimmer"
+
+[[links]]
+text = "Repository"
+url = "https://github.com/Jaiminp007/n8n-video-trimmer"
+icon = "github"
+~~~
+
+# 🎨 n8n-video-trimmer
+
+> An n8n workflow for automatically creating and uploading short video clips from a YouTube video.
+
+## 🚀 Overview
+
+This workflow automates the process of downloading a YouTube video, generating subtitles, splitting the video into shorter clips of 40-60 seconds, and uploading them to YouTube. It uses a combination of tools like `yt-dlp`, `whisper`, and `ffmpeg`, and leverages an OpenAI model to intelligently create the clips.
+
+## ✨ Features
+
+-   **🤖 Automated Video Processing**: Trigger the workflow with a YouTube URL to automatically process the video.
+-   **📝 Subtitle Generation**: Uses `whisper` to generate subtitles for the video.
+-   **🧠 AI-Powered Clipping**: Leverages an OpenAI Chat Model to create a series of 40-60 second clips.
+-   **🎬 Video Manipulation**: Uses `ffmpeg` to create the final video clips.
+-   **📤 YouTube Upload**: Automatically uploads the generated clips to YouTube.
+
+## 📋 Workflow Breakdown
+
+1.  **Webhook Trigger**: The workflow is initiated by a POST request to a webhook, which should contain the URL of the YouTube video to be processed.
+2.  **Video ID Extraction**: The YouTube video ID is extracted from the provided URL.
+3.  **Directory Creation**: A new directory is created to store the video and its related files.
+4.  **Video Download**: The YouTube video is downloaded using `yt-dlp`.
+5.  **Audio Extraction**: A WAV audio file is created from the downloaded video.
+6.  **Subtitle Generation**: `whisper` is used to generate subtitles in SRT format from the audio.
+7.  **Subtitle Processing**: The SRT file is read and processed to extract text segments with timestamps.
+8.  **AI Clipping**: The subtitle segments are passed to an OpenAI Chat Model. The model is prompted to create a JSON list of 58–60 second clips, each with a title.
+9.  **Clip Splitting**: The JSON output from the AI is split to process each clip individually.
+10. **Video Clipping**: `ffmpeg` is used to create the individual video clips based on the start and end times provided by the AI.
+11. **Final Video Creation**: Another `ffmpeg` command is used to create the final video by stacking the generated clip with a background video (`subway.mp4`).
+12. **YouTube Upload**: The final video clips are uploaded to YouTube.

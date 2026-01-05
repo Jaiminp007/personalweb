@@ -1,0 +1,25 @@
+~~~
+title = "EDITH Smart Glasses"
+description = "An AI-powered augmented reality interface providing real-time information and assistant capabilities."
+date = "2024-09-01"
+published = true
+tags = ["AI", "Augmented Reality", "Computer Vision", "Hardware"]
+
+[image]
+url = "/projects/EDITH.png"
+alt = "EDITH Interface"
+~~~
+
+# EDITH 🕶️
+
+**EDITH** (Even Dead, I'm The Hero) is a prototype for AI-powered smart glasses, delivering a heads-up display (HUD) with real-time intelligence.
+
+## Capabilities
+- **Object Recognition**: Identify objects in the user's field of view.
+- **Real-time Navigation**: Overlay directions and map data.
+- **Voice Assistant**: Natural language processing for voice commands.
+
+## Tech Stack
+- **Hardware**: Raspberry Pi / Custom ESP32
+- **Software**: Python, OpenCV
+- **AI**: TensorFlow Lite

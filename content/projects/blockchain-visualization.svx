@@ -1,0 +1,37 @@
+~~~
+title = "Blockchain Encryption Visualization"
+description = "A web-based application that visually demonstrates the core concepts of a blockchain."
+date = "2024-03-01"
+published = true
+tags = ["Python", "Flask", "JavaScript", "Blockchain", "Encryption"]
+
+[image]
+url = "/projects/blockchain.png"
+alt = "Blockchain Encryption Visualization"
+
+[[links]]
+text = "Repository"
+url = "https://github.com/Jaiminp007/Blockchain-Encryption-Visualization"
+icon = "github"
+
+[[links]]
+text = "Live Demo"
+url = "https://blockchain-tiz1.onrender.com/"
+icon = "external"
+~~~
+
+# Blockchain Encryption Visualization ⛓️
+
+A web-based application that visually demonstrates the core concepts of a blockchain. Add new blocks, explore the chain, and understand how cryptographic hashing links them together in a secure and immutable ledger.
+
+## Description
+
+This project provides a hands-on experience with blockchain technology. It simplifies the complex world of cryptocurrency and distributed ledgers into an easy-to-use interface. Users can add data to create new blocks and see in real-time how they are added to the chain. The history page offers a visual representation of the entire blockchain, allowing users to inspect the details of each block.
+
+## Features
+
+* **Add New Blocks:** Easily add new data to the blockchain through a simple form.
+* **Blockchain Visualization:** View the entire blockchain as a series of interconnected blocks.
+* **Block Details:** Click on any block to view its details, including its hash, the previous block's hash, timestamp, and data.
+* **Responsive Design:** The application is designed to work on both desktop and mobile devices.
+* **Secure and Immutable:** Experience the security of a blockchain where each block is cryptographically linked to the previous one.

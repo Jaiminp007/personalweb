@@ -1,0 +1,79 @@
+~~~
+title = "Advanced Modern Portfolio Theory Optimizer"
+description = "A sophisticated full-stack web application for portfolio optimization using Modern Portfolio Theory (MPT)."
+date = "2024-05-01"
+published = true
+tags = ["Python", "Flask", "SciPy", "Pandas", "Tailwind CSS", "Plotly.js"]
+
+[image]
+url = "/projects/Advanced Modern Portfolio Theory Optimizer.png"
+alt = "MPT Optimizer"
+
+
+
+
+[[links]]
+text = "Repository"
+url = "https://github.com/Jaiminp007/Advanced-Portfolio-Optimizer"
+icon = "github"
+
+[[links]]
+text = "Live Demo"
+url = "https://advanced-portfolio-optimizer.onrender.com/"
+icon = "external"
+~~~
+
+# Advanced Modern Portfolio Theory Optimizer
+
+A sophisticated full-stack web application for portfolio optimization using Modern Portfolio Theory (MPT) with Python Flask backend and interactive frontend.
+
+## 🚀 Features
+
+### Advanced Portfolio Optimization
+- **Multiple Optimization Strategies:**
+  - Maximum Sharpe Ratio optimization using SciPy
+  - Minimum Volatility optimization
+  - Monte Carlo simulation with 10,000+ portfolios
+  
+### Interactive Visualizations
+- **Efficient Frontier Chart** - Visualize the risk-return tradeoff
+- **Monte Carlo Scatter Plot** - See all simulated portfolios
+- **Correlation Heatmap** - Understand asset relationships
+- **Portfolio Weight Charts** - Pie and bar charts for allocation
+
+### Advanced Analytics
+- **Risk Metrics Dashboard** - VaR, Diversification Score, Max Position
+- **Portfolio Comparison** - Compare multiple strategies side-by-side
+- **Optimization History** - SQLite database tracking all optimizations
+- **Real-time Calculations** - Powered by NumPy, Pandas, and SciPy
+
+## 📦 Tech Stack
+
+### Backend
+- **Flask** - Web framework
+- **NumPy** - Numerical computations
+- **Pandas** - Data manipulation
+- **SciPy** - Optimization algorithms
+- **SQLite** - Database for history tracking
+
+### Frontend
+- **Tailwind CSS** - Modern styling
+- **Plotly.js** - Interactive charts
+- **Chart.js** - Additional visualizations
+
+## 📈 How It Works
+
+### 1. Data Processing
+- Downloads up to five years of adjusted closing prices via yfinance (configurable per request)
+- Calculates logarithmic daily returns
+- Computes annualized mean returns and covariance matrix
+
+### 2. Monte Carlo Simulation
+- Generates 10,000+ random portfolio weight combinations
+- Calculates return, volatility, and Sharpe ratio for each
+- Identifies the optimal portfolio
+
+### 3. Optimization Algorithms
+- **Max Sharpe:** Uses SciPy's SLSQP optimizer to maximize Sharpe ratio
+- **Min Volatility:** Minimizes portfolio standard deviation
+- **Monte Carlo:** Selects best portfolio from simulation

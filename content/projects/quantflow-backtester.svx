@@ -1,0 +1,61 @@
+~~~
+title = "QuantFlow"
+description = "A high-performance C++17 statistical arbitrage backtesting engine for pairs trading strategies."
+date = "2024-10-01"
+published = true
+tags = ["C++17", "High-Performance Computing", "Statistical Arbitrage", "Backtesting"]
+
+[image]
+url = "/projects/quantflow.png"
+alt = "QuantFlow"
+
+[[links]]
+text = "Repository"
+url = "https://github.com/Jaiminp007/QuantFlow"
+icon = "github"
+~~~
+
+# QuantFlow
+
+A high-performance C++17 statistical arbitrage backtesting engine for pairs trading strategies. Processes tick-level market data using Z-score mean reversion signals to identify and execute profitable trading opportunities with sub-microsecond latency.
+
+## Features
+
+- **High Performance**: Optimized for speed with `-O3` compilation, minimal heap allocations
+- **Event-Driven Architecture**: Processes tick data in real-time simulation
+- **Statistical Arbitrage**: Z-score based mean-reverting spread strategy
+- **Zero Dependencies**: Uses only C++17 Standard Library
+- **Comprehensive Analytics**: Sharpe ratio, max drawdown, and PnL tracking
+
+## Technical Specifications
+
+- **Language**: C++17
+- **Compiler**: g++ or clang++
+- **Build Flags**: `-std=c++17 -Wall -Wextra -Wpedantic -O3`
+- **Performance**: Capable of processing millions of ticks per second
+
+## System Architecture
+
+The system follows a high-frequency event loop architecture optimized for low-latency simulation:
+
+1.  **Data Creation & Storage**: Synthetic tick data is generated or loaded from CSV.
+2.  **Initialization**: Vectors are pre-allocated and strategy parameters are configured.
+3.  **The Event Loop**: The engine iterates through time-series data tick-by-tick.
+4.  **Execution**: Signals are generated (Z-score), and portfolio orders are executed immediately based on logic.
+5.  **The Result**: Performance metrics (Sharpe, PnL) are calculated upon loop completion.
+
+## Strategy Logic
+
+1. **Signal Generation**: Calculates Z-score of price spread between two symbols
+2. **Entry Rules**:
+   - Z-score > `entry_z` → GO_SHORT (sell A, buy B)
+   - Z-score &lt; `-entry_z` → GO_LONG (buy A, sell B)
+3. **Exit Rules**:
+   - |Z-score| &lt; `exit_z` → GO_FLAT (close position)
+
+## Performance Optimization
+
+- Pre-allocated vectors to avoid heap allocations
+- Efficient CSV parsing with minimal string operations
+- O(1) price lookups using `std::map`
+- Compiled with `-O3` optimization flag

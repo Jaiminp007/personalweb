@@ -1,0 +1,75 @@
+~~~
+title = "AlgoClash Live ⚔️"
+description = "A high-frequency, real-time trading arena where AI Agents (GPT-4, DeepSeek, Grok) compete to profit from live Binance markets."
+date = "2025-12-16"
+published = true
+tags = ["Python", "Flask", "React + Vite", "Socket.IO", "MongoDB", "AI Agents"]
+
+[image]
+url = "/projects/algoclash_live.png"
+alt = "AlgoClash Live"
+
+[[links]]
+text = "Repository"
+url = "https://github.com/Jaiminp007/AlgoLive"
+icon = "github"
+~~~
+
+# AlgoClash Live ⚔️📈
+
+**AlgoClash Live** is a high-frequency, real-time trading arena where AI Agents (powered by LLMs) compete to profit from live cryptocurrency markets.
+
+Unlike traditional backtesting, these agents run **LIVE** against the real Binance stream (BTC, ETH, SOL, XRP, DOGE), making split-second decisions to Buy, Sell, or Hold based on real-time price action and technical indicators.
+
+## 🏗️ Architecture
+
+
+The system is engineered for low-latency execution and modular AI integration:
+
+### **Backend (Python Flask)**
+*   **Engine (`Arena`)**: A threaded game loop that pushes market ticks to agents and processes orders.
+*   **The Brain (`Brain`)**: An AI orchestration layer that uses **GitHub AI Inference** and **OpenRouter** to generate, validate, and *evolve* trading strategies on the fly.
+*   **Data Feed**: Direct WebSocket/REST integration with Binance for sub-second price updates.
+*   **Persistence**: MongoDB ensures agent equity, holdings, and trade history survive server restarts.
+
+### **Frontend (React + Vite)**
+*   **Real-Time Data**: Socket.IO for millisecond-latency price & portfolio updates.
+*   **Visualization**: High-performance Recharts with linear interpolation for smooth equity curves.
+*   **UX**: "Command Center" aesthetic with glassmorphism and responsive design.
+
+## 🚀 Key Features
+
+### 1. Multi-Asset Live Trading
+Agents scan multiple assets simultaneously: **BTC, ETH, SOL, XRP, DOGE**.
+*   **Starting Capital**: $10,000 (Paper Money)
+*   **Leverage**: 4x Buying Power
+*   **Execution**: Simulated slip-free execution at current tick price.
+
+### 2. Elite Model Roster
+The arena currently hosts top-tier models via GitHub AI Inference:
+*   **GPT-4o** (OpenAI)
+*   **GPT-4** (OpenAI)
+*   **DeepSeek V3** (DeepSeek)
+*   **Mistral Large** (Mistral AI)
+*   **Grok 3** (xAI)
+
+### 3. "The Brain" & Auto-Evolution 🧬
+The system doesn't just run static code; it **invents** it.
+*   **Generation**: Prompts LLMs to write robust, functional Python trading algorithms (`execute_strategy`).
+*   **Validation**: AST parsing prevents dangerous imports (`os`, `sys`) ensuring sandbox safety.
+*   **Evolution**: An automated "Auditor" reviews agent performance (ROI). If an agent is losing money, the Auditor critiques the code and forces the LLM to refactor the strategy.
+
+### 4. Functional Agent Architecture
+Agents are pure Python functions with global state management, allowing them to:
+*   Calculate complex indicators (RSI, EMA, MACD).
+*   Maintain internal state (Entry Price, Trade Count) across ticks.
+*   Hot-Swap safely (logic handles zero-state restarts).
+
+## 🛠️ How It Works (The Loop)
+
+1.  **Tick**: Backend fetches live prices for all 5 assets.
+2.  **Broadcast**: Prices sent to Frontend via WebSocket.
+3.  **Think**: `Arena` invokes the `execute_strategy` function of every active agent.
+4.  **Decide**: Agent returns `("BUY", "SOL", 10.5)` or `("SELL", "BTC", 0.1)`.
+5.  **Execute**: Arena validates funds, calculates fees (0.025%), and updates the portfolio.
+6.  **Evolve**: Periodically, underperforming agents are sent back to "The Brain" for code refinement.

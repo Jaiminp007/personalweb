@@ -1,0 +1,91 @@
+~~~
+title = "Quantum Trading Systems - Order Book Engine"
+description = "A high-performance limit order book with an interactive trading terminal built in C++17."
+date = "2025-10-01"
+published = true
+tags = ["C++17", "Trading Systems", "Low Latency", "Matching Engine"]
+
+[image]
+url = "/projects/c++_lob.png"
+alt = "Quantum Order Book"
+
+[[links]]
+text = "Repository"
+url = "https://github.com/Jaiminp007/High-Performance-Limit-Order-Book"
+icon = "github"
+~~~
+
+# Quantum Trading Systems - Order Book Engine
+
+A high-performance limit order book with an interactive trading terminal built in C++17. Features professional-grade matching engine and real-time execution reporting.
+
+## 🚀 Quick Start
+
+### Run the Trading Terminal
+Or launch the professional showcase:
+\`\`\`bash
+./showcase.sh
+\`\`\`
+
+## 📦 What's Included
+
+### Interactive Programs
+
+| Program | Description |
+|---------|-------------|
+| **trading_terminal** | Interactive trading interface with real-time reporting |
+| **orderbook** | Automated test suite with 9 validation scenarios |
+| **showcase.sh** | Professional demo launcher with menu |
+| **start_trading.sh** | Quick terminal launcher |
+
+### Core Components
+
+- **OrderBook Engine** - High-performance matching engine with Price-Time Priority
+- **Trading Terminal** - Professional UI for interactive order management
+- **Test Suite** - Comprehensive validation of all functionality
+
+## ⚡ Performance
+
+### Time Complexity
+
+| Operation | Complexity | Details |
+|-----------|-----------|---------|
+| Add Order | O(log n + m) | n = price levels, m = matches |
+| Cancel Order | O(1) average | Hash lookup + list erase |
+| Match Order | O(m) | m = number of orders matched |
+
+### Throughput
+
+- **10M** orders/sec (no matching)
+- **2-5M** orders/sec (with matching)
+- **15M** cancellations/sec
+
+### Memory
+
+- ~104 bytes per active order
+- No pre-allocation
+- Scales linearly
+
+## 🏗️ Architecture
+
+### Data Structures
+
+**Price Levels:** `std::map` - Maintains sorted order automatically
+- Bids sorted descending (highest first)
+- Asks sorted ascending (lowest first)
+
+**Orders at Each Level:** `std::list` - FIFO queue
+- O(1) removal from any position
+- Iterator stability for lookups
+
+**Order Lookup:** `std::unordered_map` - Fast cancellation
+- O(1) average lookup time
+- Stores iterator for direct access
+
+### Matching Engine
+
+Implements **Price-Time Priority**:
+1. Orders match first by price
+2. At the same price, FIFO order (first in, first out)
+3. Partial fills supported
+4. Resting orders for unfilled quantity

@@ -1,0 +1,17 @@
+~~~
+description = "Thrilled to share that my team placed 1st overall in the CFM 101 Market Meet Competition!"
+published_at = "2025-01-01"
+tags = ["competition", "finance", "cfm", "uwaterloo"]
+
+[title]
+text = "1st Place at CFM 101 Competition"
+config = "8c 8"
+~~~
+
+I'm excited to share that my team and I placed **1st overall** in the **CFM 101 Market Meet Competition** at the University of Waterloo! 🏆
+
+We developed a benchmark-relative quantitative portfolio construction system that achieved a **3.2% return** over one week, outperforming the benchmark in a volatile market.
+
+Check out the full details and our journey in my LinkedIn post below:
+
+[**View LinkedIn Post**](https://www.linkedin.com/feed/update/urn:li:activity:7410466364748091392/)

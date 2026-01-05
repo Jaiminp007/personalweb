@@ -1,0 +1,33 @@
+~~~
+title = "Space Portfolio (Three.js + Vite)"
+description = "An interactive 3D portfolio scene built with Three.js and Vite."
+date = "2024-01-01"
+published = true
+tags = ["Three.js", "Vite", "WebGL", "JavaScript"]
+
+[image]
+url = "/projects/space_portfolio.png"
+alt = "Space Portfolio"
+
+[[links]]
+text = "Repository"
+url = "https://github.com/Jaiminp007/space"
+icon = "github"
+~~~
+
+# Space Portfolio (Three.js + Vite)
+
+An interactive 3D portfolio scene built with Three.js and Vite. Pilot a spaceship through space, orbit a sun, and visit planets that link to About, Projects, and Contact pages.
+
+## Features
+- Real-time 3D scene using Three.js
+- Central sun with lighting and orbiting planets
+- Spacecraft GLB model with optional animation support
+- Smooth keyboard navigation and inertial movement
+- Proximity-based page navigation (fly near a planet to open its page)
+
+## Controls
+- Move forward/back: W / S or Arrow Up / Arrow Down
+- Rotate left/right: A / D or Arrow Left / Arrow Right
+- Vertical nudge: Scroll wheel (short impulse up/down)
+- Stop server: Ctrl + C in the terminal

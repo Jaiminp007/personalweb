@@ -1,0 +1,37 @@
+~~~
+title = "Login Interface"
+description = "A Python application for logging user account creation and login times."
+date = "2024-01-01"
+published = true
+tags = ["Python", "Flask", "MySQL", "Authentication"]
+
+[image]
+url = "/projects/login.png"
+alt = "Login Interface"
+
+[[links]]
+text = "Repository"
+url = "https://github.com/Jaiminp007/Login-Interface"
+icon = "github"
+
+[[links]]
+text = "Live Demo"
+url = "https://login-interface.onrender.com"
+icon = "external"
+~~~
+
+# Login Interface
+
+This project is a Python application that provides a simple user interface for logging user account creation and login times. The application connects to a MySQL database to store and manage user data.
+
+## Features
+
+- User account creation
+- User login
+- Timestamp logging for account creation and login
+
+## Technologies Used
+
+- Python
+- Flask
+- Json File

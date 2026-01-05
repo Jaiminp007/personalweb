@@ -1,0 +1,58 @@
+~~~
+title = "AI Trader Battlefield"
+description = "An experimental platform where AI-generated trading algorithms compete against each other in a simulated stock market."
+date = "2025-07-25"
+published = true
+tags = ["Python", "Flask", "React", "OpenRouter API", "AI"]
+
+[image]
+url = "/projects/algoclash.png"
+alt = "AI Trader Battlefield"
+
+[[links]]
+text = "Repository"
+url = "https://github.com/Jaiminp007/AlgoClash-Where-Code-Collides"
+icon = "github"
+
+[[links]]
+text = "Live Demo"
+url = "https://ai-trader-battlefield-fro.onrender.com"
+icon = "external"
+~~~
+
+# AI Trader Battlefield
+
+An experimental platform where AI-generated trading algorithms compete against each other in a simulated stock market. Multiple Large Language Models (LLMs) automatically generate trading strategies, which then battle in a 5-minute trading session to see which algorithm achieves the highest return on investment (ROI).
+
+> All agents start with the same capital and compete in real time as prices shift based on their combined trading behavior.
+
+## 🧠 Description
+
+This platform demonstrates the intersection of AI code generation and algorithmic trading by:
+
+1. **Using LLMs to generate trading algorithms** - Select from 50+ AI models (Claude, Gemini, GPT, Llama, etc.) to automatically generate Python trading functions
+2. **Simulating realistic market conditions** - A custom order book and tick-based engine processes trades with price-time priority matching
+3. **Competing strategies head-to-head** - 2-6 AI-generated algorithms compete simultaneously on the same stock data
+4. **Visualizing performance in real-time** - Interactive dashboard shows live leaderboards, portfolio values, and market charts
+
+Each generated algorithm receives tick-by-tick market data and makes autonomous BUY/SELL/HOLD decisions. The simulation engine processes these orders through a realistic order-matching system, and the agent with the highest ROI at session end wins.
+
+## 🌟 Core Features
+
+### 🤖 AI-Powered Algorithm Generation
+- **50+ LLM Integration** - Generate strategies using Claude Opus, Gemini, GPT-4, Llama, DeepSeek, Mistral, and more via OpenRouter API
+- **Automatic Code Creation** - LLMs write complete Python trading functions based on strategy prompts
+- **Algorithm Preview** - Review and inspect generated code before running simulations
+- **Multi-Model Comparison** - Test which AI model creates the most profitable strategies
+
+### 🏛 Advanced Market Simulation
+- **Order Book Engine** - Professional-grade order matching with price-time priority
+- **Realistic Tick Data** - Historical data for AAPL, GOOGL, TSLA, MSFT, AMZN, NVDA, META, NFLX
+- **60-Tick Sessions** - Each battle runs for 60 market ticks (~5 minutes real-time)
+- **Multiple Agent Support** - Run 2-6 competing algorithms simultaneously
+
+### 📈 Interactive Dashboard
+- **Live Leaderboard** - Real-time ROI rankings updated every tick
+- **Market Charts** - Dynamic price visualization with Recharts
+- **Performance Metrics** - Track P&L, win rate, max drawdown, and portfolio value
+- **Trade History** - Complete audit log of all executed orders
