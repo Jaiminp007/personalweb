@@ -1,3 +1,4 @@
+<script lang="ts">
 	import { env } from '$env/dynamic/public';
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
@@ -9,7 +10,9 @@
 
 	const year = new Date().getFullYear();
 	const shortSha = env.PUBLIC_COMMIT_SHA ? env.PUBLIC_COMMIT_SHA.substring(0, 7) : 'dev';
-	const commitLinkUrl = env.PUBLIC_COMMIT_SHA ? `${Site.repo.commitBaseUrl}${env.PUBLIC_COMMIT_SHA}` : '#';
+	const commitLinkUrl = env.PUBLIC_COMMIT_SHA
+		? `${Site.repo.commitBaseUrl}${env.PUBLIC_COMMIT_SHA}`
+		: '#';
 
 	let timeOnSite = $state('00:00');
 
