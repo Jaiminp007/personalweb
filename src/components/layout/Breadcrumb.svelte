@@ -56,15 +56,15 @@
 		{/each}
 		<li class="mx-0.5 inline-flex items-center" aria-hidden="true">/</li>
 
-		<li class="ml-1 inline-flex items-center relative">
-			<input 
-				type="text" 
+		<li class="relative ml-1 inline-flex items-center">
+			<input
+				type="text"
 				bind:value={command}
 				onkeydown={handleKeydown}
-				class="bg-transparent border-none outline-none text-accent caret-accent min-w-[1ch] p-0 m-0 cursor-blink placeholder-transparent focus:ring-0"
+				class="text-accent caret-accent cursor-blink m-0 min-w-[1ch] border-none bg-transparent p-0 placeholder-transparent outline-none focus:ring-0"
 				style="width: {Math.max(1, command.length)}ch;"
 				aria-label="Command input"
-        spellcheck="false"
+				spellcheck="false"
 			/>
 		</li>
 	</ul>

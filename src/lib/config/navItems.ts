@@ -14,9 +14,7 @@ export const mainNavItems: NavItem[] = [
 	{ title: 'Projects', href: '/projects' }
 ];
 
-export const moreNavItems: NavItem[] = [
-	{ title: 'Resume', href: '/resume.pdf', external: true }
-];
+export const moreNavItems: NavItem[] = [{ title: 'Resume', href: '/resume.pdf', external: true }];
 // Example 'More' items - add your 20+ items here
 // export const moreNavItems: NavItem[] = [
 // 	{ title: 'Blog', href: '/blog' }, // Example internal

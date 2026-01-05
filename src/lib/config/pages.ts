@@ -37,8 +37,7 @@ export const experienceTimeline: ExperienceTimelineItem[] = [
 		logoUrl: '/logos/vantxlab.svg',
 		logoAlt: 'VantxLab Logo',
 		startDate: '2024-01-01', // Placeholder date
-		details:
-			'Engineering scalable software solutions.',
+		details: 'Engineering scalable software solutions.',
 		logoScale: 1.0
 	},
 	{
@@ -48,8 +47,7 @@ export const experienceTimeline: ExperienceTimelineItem[] = [
 		logoUrl: '/projects/algoclash.png',
 		logoAlt: 'AlgoClash Logo',
 		startDate: '2023-01-01', // Placeholder date
-		details:
-			'Founder of AlgoClash, a high-frequency trading arena for AI agents.',
+		details: 'Founder of AlgoClash, a high-frequency trading arena for AI agents.',
 		logoScale: 1.0
 	},
 	{
@@ -59,8 +57,7 @@ export const experienceTimeline: ExperienceTimelineItem[] = [
 		logoUrl: '/logos/Uwaterloo.svg',
 		logoAlt: 'UWaterloo Logo',
 		startDate: '2024-09-01',
-		details:
-			"First-year Computing and Financial Management (CFM) student.",
+		details: 'First-year Computing and Financial Management (CFM) student.',
 		logoScale: 1.0
 	}
 ];

@@ -66,15 +66,14 @@
 				target="_blank"
 				rel="noopener"
 				href="https://uwaterloo.ca/computing-financial-management/">UWaterloo</a
-			> and a Part-time Software Engineer at <a
-            class="link text-accent/85"
-            target="_blank"
-            rel="noopener"
-            href="https://vantxlab.com">VantxLab</a
-        >. I specialize in building high-frequency trading systems and multi-agent AI architectures. Currently developing <a
-        class="link text-accent/85"
-        href="/projects/algoclash-live">AlgoClash Live</a
-    >, an arena where AI agents trade real crypto markets.
+			>
+			and a Part-time Software Engineer at
+			<a class="link text-accent/85" target="_blank" rel="noopener" href="https://vantxlab.com"
+				>VantxLab</a
+			>. I specialize in building high-frequency trading systems and multi-agent AI architectures.
+			Currently developing
+			<a class="link text-accent/85" href="/projects/algoclash-live">AlgoClash Live</a>, an arena
+			where AI agents trade real crypto markets.
 		</p>
 		<div class="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
 			{#each Home.socialLinks as link (link.href)}

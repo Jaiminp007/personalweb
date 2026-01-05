@@ -54,30 +54,34 @@
 				<img
 					src="/images/avatar.webp"
 					alt="Jaimin Patel"
-					class="w-full h-auto rounded-md object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
+					class="h-auto w-full rounded-md object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
 				/>
 			</div>
 
 			<div class="space-y-4 md:col-span-2">
 				<p class="text-subtext0 text-base leading-relaxed">
-					<b>Hey!</b> I'm Jaimin Patel <a class="link" href={Site.out.github}>(@Jaiminp007)</a> — a
-					Software Engineering Intern at VantxLab and a Computing and Financial Management (CFM) student based in Waterloo, Ontario.
+					<b>Hey!</b> I'm Jaimin Patel <a class="link" href={Site.out.github}>(@Jaiminp007)</a> — a Software
+					Engineering Intern at VantxLab and a Computing and Financial Management (CFM) student based
+					in Waterloo, Ontario.
 				</p>
 
 				<p class="text-subtext0 text-base leading-relaxed">
-					I specialize in building high-frequency trading systems, multi-agent AI architectures, and full-stack web applications.
-					Some of my notable projects include
+					I specialize in building high-frequency trading systems, multi-agent AI architectures, and
+					full-stack web applications. Some of my notable projects include
+					{@render GithubProject('AlgoClash', 'https://github.com/Jaiminp007/AlgoLive', 10)}, a
+					real-time AI trading arena, and
 					{@render GithubProject(
-						'AlgoClash',
-						'https://github.com/Jaiminp007/AlgoLive',
-						10
-					)}, a real-time AI trading arena, and
-					{@render GithubProject('Limit Order Book', 'https://github.com/Jaiminp007/High-Performance-Limit-Order-Book', 5)}, a C++17 matching engine.
+						'Limit Order Book',
+						'https://github.com/Jaiminp007/High-Performance-Limit-Order-Book',
+						5
+					)}, a C++17 matching engine.
 				</p>
 
 				<p class="text-subtext0 text-base leading-relaxed">
 					When I'm not coding, I enjoy exploring new technologies and participating in hackathons.
-					Feel free to <button onclick={handleEmailClick} class="link cursor-pointer">shoot me an email</button> if you'd like to chat.
+					Feel free to <button onclick={handleEmailClick} class="link cursor-pointer"
+						>shoot me an email</button
+					> if you'd like to chat.
 				</p>
 
 				<div class="flex flex-wrap gap-3 pt-2">
@@ -131,17 +135,26 @@
 		</AnchorHeader>
 
 		<div class="space-y-6">
-			<div class="prose prose-sm max-w-none text-subtext0">
+			<div class="prose prose-sm text-subtext0 max-w-none">
 				<div class="mb-4">
-					<h3 class="text-xl font-semibold text-text">Software Engineering Intern (Part-time)</h3>
-					<div class="flex justify-between text-subtext1">
+					<h3 class="text-text text-xl font-semibold">Software Engineering Intern (Part-time)</h3>
+					<div class="text-subtext1 flex justify-between">
 						<span>VantxLab • Toronto, ON</span>
 						<span>Dec 2025 – Present</span>
 					</div>
-					<ul class="list-disc pl-5 mt-2 space-y-1">
-						<li>Developing <b>TheFamly</b>, a Duolingo-style family health app with an AI assistant and analytics.</li>
-						<li>Building health-data tracking features (lab reports, file uploads, and messages) with searchable history and user insights.</li>
-						<li>Utilizing production workflows: GitHub issues, branching, PR reviews, and shipping maintainable code with basic testing/logging.</li>
+					<ul class="mt-2 list-disc space-y-1 pl-5">
+						<li>
+							Developing <b>TheFamly</b>, a Duolingo-style family health app with an AI assistant
+							and analytics.
+						</li>
+						<li>
+							Building health-data tracking features (lab reports, file uploads, and messages) with
+							searchable history and user insights.
+						</li>
+						<li>
+							Utilizing production workflows: GitHub issues, branching, PR reviews, and shipping
+							maintainable code with basic testing/logging.
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -155,10 +168,10 @@
 		</AnchorHeader>
 
 		<div class="space-y-6">
-			<div class="prose prose-sm max-w-none text-subtext0">
+			<div class="prose prose-sm text-subtext0 max-w-none">
 				<div>
-					<h3 class="text-xl font-semibold text-text">University of Waterloo</h3>
-					<div class="flex justify-between text-subtext1">
+					<h3 class="text-text text-xl font-semibold">University of Waterloo</h3>
+					<div class="text-subtext1 flex justify-between">
 						<span>Computing and Financial Management (CFM) • Waterloo, ON</span>
 						<span>Sept 2025 – Present</span>
 					</div>
@@ -177,14 +190,17 @@
 		</AnchorHeader>
 
 		<div class="space-y-6">
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-subtext0">
-				<div class="bg-surface0 p-4 rounded-lg">
-					<h3 class="text-lg font-semibold text-text mb-2">Languages</h3>
+			<div class="text-subtext0 grid grid-cols-1 gap-6 md:grid-cols-2">
+				<div class="bg-surface0 rounded-lg p-4">
+					<h3 class="text-text mb-2 text-lg font-semibold">Languages</h3>
 					<p>C++ (C++17), C, Rust, Python, TypeScript, JavaScript, SQL, HTML/CSS, Bash</p>
 				</div>
-				<div class="bg-surface0 p-4 rounded-lg">
-					<h3 class="text-lg font-semibold text-text mb-2">Frameworks/Tools</h3>
-					<p>React, React Native, FastAPI, Flask, Node.js, Docker, Git, GitHub Actions, AWS, Linux, PostgreSQL, Firebase, Render, n8n, OpenAI API, YouTube API</p>
+				<div class="bg-surface0 rounded-lg p-4">
+					<h3 class="text-text mb-2 text-lg font-semibold">Frameworks/Tools</h3>
+					<p>
+						React, React Native, FastAPI, Flask, Node.js, Docker, Git, GitHub Actions, AWS, Linux,
+						PostgreSQL, Firebase, Render, n8n, OpenAI API, YouTube API
+					</p>
 				</div>
 			</div>
 		</div>

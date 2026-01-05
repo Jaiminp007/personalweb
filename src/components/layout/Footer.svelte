@@ -58,7 +58,6 @@
 <div class="relative m-auto mx-5 mb-5">
 	<!-- Raised webring section that morphs into the footer -->
 
-
 	<!-- Main footer with smooth connection to the raised section -->
 	<footer
 		class="bg-crust text-subtext0 border-surface0/20 flex h-auto flex-col items-center justify-center gap-y-3 rounded-lg border p-5 text-sm md:flex-row md:justify-between md:gap-y-0"
@@ -82,9 +81,9 @@
 		<div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 md:justify-end">
 			<div class="flex items-center gap-1.5" title="Listening to">
 				<span class="text-subtext1 text-sm">Listening to:</span>
-                <span class="text-accent text-sm font-medium">Drake</span>
-            </div>
-            <span class="text-surface0 hidden sm:inline">-</span>
+				<span class="text-accent text-sm font-medium">Drake</span>
+			</div>
+			<span class="text-surface0 hidden sm:inline">-</span>
 
 			<div class="flex items-center gap-1.5" title="How long you have been surfing my site">
 				<IconClock size={14} class="text-subtext1" />
