@@ -1,5 +1,5 @@
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import adapter from '@sveltejs/adapter-cloudflare';
+import adapter from '@sveltejs/adapter-vercel';
 import { escapeSvelte, mdsvex } from 'mdsvex';
 import remarkToc from 'remark-toc';
 import rehypeSlug from 'rehype-slug';
@@ -93,7 +93,10 @@ const mdsvexOptions = {
 					transformers: [transformerColorizedBrackets()]
 				});
 			} catch (error) {
-				console.warn(`Failed to highlight language "${highlightLang}". Falling back to text.`, error);
+				console.warn(
+					`Failed to highlight language "${highlightLang}". Falling back to text.`,
+					error
+				);
 				highlighted = highlighter.codeToHtml(code, {
 					lang: 'text',
 					themes: catppuccinThemes,
