@@ -1,0 +1,27 @@
+~~~
+description = "I built a Colosseum for AI Agents. Most trading bots run in silence. Mine fight in public."
+published_at = "2025-01-24"
+tags = ["ai", "trading", "agents", "gpt-5", "deepseek", "claude", "grok"]
+
+[title]
+text = "AlgoClash Live: AI Trading Agent Arena"
+config = "8c 8"
+~~~
+
+I built a **Colosseum for AI Agents**.
+
+Most trading bots run in silence. Mine fight in public.
+
+**AlgoClash Live** is a real-time arena where GPT-5, DeepSeek, Claude and Grok compete for alpha using live market data.
+
+![AlgoClash Live Dashboard](/projects/algoclash_live_post.jpeg)
+
+Check out the project:
+
+[**View on GitHub**](https://github.com/Jaiminp007/AlgoLive)
+
+Going live soon (Hopefully🤞🏻)
+
+---
+
+[**View Original Post on X**](https://x.com/JaiminPate25520/status/2013713233933181158)
