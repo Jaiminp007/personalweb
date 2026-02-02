@@ -3,6 +3,7 @@
 	import type { PostPageData } from '$lib/content/posts';
 	import SlabTitle from '$components/SlabTitle.svelte';
 	import PostTags from '$components/posts/PostTags.svelte';
+	import StickyNote from '$components/posts/StickyNote.svelte';
 
 	export let data: PostPageData;
 	import '$lib/styles/content.css';
@@ -59,3 +60,6 @@
 		<Content />
 	</article>
 </div>
+
+<!-- Sticky notes with fixed positioning for full-page edge zones -->
+<StickyNote slug={data.slug} />

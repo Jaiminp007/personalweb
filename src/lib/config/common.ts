@@ -91,8 +91,8 @@ const Site: Site = {
 		x: 'https://x.com/JaiminPate25520' // Placeholder
 	},
 	repo: {
-		url: 'https://github.com/JasonLovesDoggo/nyx',
-		commitBaseUrl: 'https://github.com/JasonLovesDoggo/nyx/commit/'
+		url: 'https://github.com/Jaiminp007/personalweb',
+		commitBaseUrl: 'https://github.com/Jaiminp007/personalweb/commit/'
 	}
 };
 

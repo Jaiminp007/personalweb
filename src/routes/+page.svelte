@@ -153,15 +153,6 @@
 						<IconActivity size={16} class="text-accent" />
 						<span>Recent Commits</span>
 					</h3>
-					<a
-						href="https://katib.jsn.cam"
-						target="_blank"
-						rel="noopener noreferrer"
-						aria-label="See how this is calculated Katib"
-						class="text-accent/80 hover:text-accent text-xs font-medium transition-colors"
-					>
-						[info]
-					</a>
 				</div>
 				{#if data.commitData?.commits?.length > 0}
 					<ul class="space-y-1.5 text-sm">
@@ -194,7 +185,7 @@
 				{/if}
 				<div class="mt-3 flex items-center gap-3">
 					<a
-						href="https://github.com/jasonlovesdoggo"
+						href="https://github.com/Jaiminp007"
 						target="_blank"
 						rel="noopener noreferrer"
 						class="group text-accent inline-flex items-center gap-1 text-sm hover:underline"
