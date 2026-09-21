@@ -31,23 +31,35 @@ export interface ExperienceTimelineItem {
 
 export const experienceTimeline: ExperienceTimelineItem[] = [
 	{
-		company: 'VantxLab',
-		role: 'Part-time Software Engineer',
-		url: 'https://vantxlab.com', // Placeholder if unknown
-		logoUrl: '/logos/vantxlab.svg',
-		logoAlt: 'VantxLab Logo',
-		startDate: '2024-01-01', // Placeholder date
-		details: 'Engineering scalable software solutions.',
+		company: 'Polarline Markets',
+		role: 'Chief Executive Officer',
+		url: 'https://www.polarline.io',
+		logoUrl: '/logos/polarline.svg',
+		logoAlt: 'Polarline Markets logo',
+		startDate: '2026-08-01',
+		details: 'Building an AI-native operating system for investment research and fund operations.',
 		logoScale: 1.0
 	},
 	{
-		company: 'AlgoClash',
-		role: 'Founder',
-		url: 'https://algoclash.com', // Placeholder
-		logoUrl: '/projects/algoclash.png',
-		logoAlt: 'AlgoClash Logo',
-		startDate: '2023-01-01', // Placeholder date
-		details: 'Founder of AlgoClash, a high-frequency trading arena for AI agents.',
+		company: 'HyperOdd',
+		role: 'Software Engineer Intern',
+		url: 'https://hyperodd.com',
+		logoUrl: '/logos/hyperodd.svg',
+		logoAlt: 'HyperOdd logo',
+		startDate: '2026-05-01',
+		endDate: '2026-08-31',
+		details: 'Built prediction market infrastructure.',
+		logoScale: 1.0
+	},
+	{
+		company: 'VantxLab',
+		role: 'Artificial Intelligence Research Intern',
+		url: 'https://vantxlab.com',
+		logoUrl: '/logos/vantxlab.svg',
+		logoAlt: 'VantxLab logo',
+		startDate: '2025-12-01',
+		endDate: '2026-04-30',
+		details: 'Built AI-integrated health infrastructure and gamified analytics.',
 		logoScale: 1.0
 	},
 	{
@@ -55,9 +67,10 @@ export const experienceTimeline: ExperienceTimelineItem[] = [
 		role: 'CFM Student',
 		url: 'https://uwaterloo.ca/computing-financial-management/',
 		logoUrl: '/logos/Uwaterloo.svg',
-		logoAlt: 'UWaterloo Logo',
-		startDate: '2024-09-01',
-		details: 'First-year Computing and Financial Management (CFM) student.',
+		logoAlt: 'UWaterloo logo',
+		startDate: '2025-08-01',
+		details:
+			'Computing and Financial Management student building at the intersection of software and markets.',
 		logoScale: 1.0
 	}
 ];

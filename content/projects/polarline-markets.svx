@@ -1,0 +1,32 @@
+~~~
+title = "Polarline Markets — Scout"
+description = "AI-native tools for investment research and fund operations, with Scout Front Office and Back Office workflows."
+date = "2026-08-01"
+published = true
+featured = true
+tags = ["AI", "Investment Research", "Fund Operations", "Backtesting", "FinTech"]
+
+[image]
+url = "/projects/polarline.svg"
+alt = "Polarline Markets"
+
+[[links]]
+text = "Website"
+url = "https://www.polarline.io/"
+icon = "external"
+~~~
+
+# Polarline Markets
+
+I’m building **Polarline Markets**, an AI-native operating system for investment research and fund operations.
+
+## Scout
+
+Scout has two connected surfaces:
+
+- **Front Office** turns investment ideas into researchable, testable strategies through research, strategy development, and backtesting.
+- **Back Office** brings together broker, OMS/PMS, and internal-book records so teams can investigate reconciliation breaks and keep the next action moving.
+
+The product is designed around the work behind the decision: clear evidence, traceable operations, and a workflow that helps people move from a question to a considered answer.
+
+Polarline’s investment program is currently in forward paper and testnet testing while the process, controls, and evidence are examined before a broader launch.

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Polarline Markets</title>
+  <desc id="desc">An abstract polar grid representing investment research and fund operations.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#1e1e2e"/>
+      <stop offset="1" stop-color="#313244"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="70%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#f5e0dc" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#f5e0dc" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect width="1200" height="675" fill="url(#glow)"/>
+  <g fill="none" stroke="#cba6f7" stroke-opacity=".22" stroke-width="2">
+    <ellipse cx="760" cy="320" rx="360" ry="92" transform="rotate(-18 760 320)"/>
+    <ellipse cx="760" cy="320" rx="360" ry="172" transform="rotate(-18 760 320)"/>
+    <ellipse cx="760" cy="320" rx="360" ry="252" transform="rotate(-18 760 320)"/>
+    <path d="M410 320h700M480 200l560 240M480 440l560-240"/>
+  </g>
+  <path d="M120 520 300 430l150 46 165-130 160 45 200-180" fill="none" stroke="#f5e0dc" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="975" cy="211" r="12" fill="#f5e0dc"/>
+  <text x="82" y="120" fill="#f5e0dc" font-family="monospace" font-size="38" letter-spacing="7">POLARLINE MARKETS</text>
+  <text x="86" y="590" fill="#cdd6f4" font-family="monospace" font-size="24" letter-spacing="4">RESEARCH / OPERATIONS / EVIDENCE</text>
+</svg>

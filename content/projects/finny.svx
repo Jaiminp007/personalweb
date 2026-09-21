@@ -1,0 +1,30 @@
+~~~
+title = "Finny — AI Financial Harness"
+description = "An AI financial harness for systematic trading that researches ideas, writes strategies, and tries to disprove them."
+date = "2026-07-01"
+published = true
+featured = true
+tags = ["AI Agents", "Systematic Trading", "Backtesting", "Research", "Open Source"]
+
+[image]
+url = "/projects/finny.svg"
+alt = "Finny"
+
+[[links]]
+text = "GitHub"
+url = "https://github.com/finny-ai/finny"
+icon = "github"
+
+[[links]]
+text = "Finny"
+url = "https://finnyai.tech"
+icon = "external"
+~~~
+
+# Finny
+
+**Finny** is an AI financial harness for systematic trading. Describe an idea in plain English and Finny researches it, writes it, and tries as hard as it can to prove it doesn’t work.
+
+The useful part is the refusal to believe an attractive backtest too quickly. Runs carry immutable, hash-bound data snapshots; market-calendar coverage is reconciled; repaired or synthetic data cannot start a backtest; and the verdict is deterministic. The honest outcome for many ideas is `research_only`.
+
+Finny is the research engine behind a broader product direction: giving AI agents the tools and constraints needed to work with markets without confusing a compelling narrative for evidence.

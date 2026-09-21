@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Finny</title>
+  <desc id="desc">A dark interface with a rising validation curve for Finny, an AI financial harness.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#11111b"/>
+      <stop offset="1" stop-color="#1e1e2e"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" x2="1">
+      <stop offset="0" stop-color="#89b4fa"/>
+      <stop offset="1" stop-color="#a6e3a1"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g stroke="#45475a" stroke-width="2" opacity=".7">
+    <path d="M80 150h1040M80 280h1040M80 410h1040M80 540h1040"/>
+    <path d="M180 100v470M360 100v470M540 100v470M720 100v470M900 100v470M1080 100v470"/>
+  </g>
+  <path d="M92 508c80-22 115 12 171-32 61-48 93-15 145-70 61-64 94-6 150-52 64-53 112 18 163-46 57-72 102-24 154-78 55-57 114-18 221-116" fill="none" stroke="url(#line)" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="1096" cy="114" r="13" fill="#a6e3a1"/>
+  <text x="82" y="105" fill="#cdd6f4" font-family="monospace" font-size="38" letter-spacing="7">FINNY</text>
+  <text x="84" y="622" fill="#89b4fa" font-family="monospace" font-size="24" letter-spacing="4">GENERATE / TEST / DISPROVE</text>
+</svg>

@@ -2,7 +2,6 @@ import {
 	type Icon,
 	IconBrandBluesky,
 	IconBrandGithub,
-	IconBrandInstagram,
 	IconBrandLinkedin,
 	IconBrandX
 } from '@tabler/icons-svelte';
@@ -44,18 +43,22 @@ interface Site {
 const Site: Site = {
 	name: 'Jaimin Patel',
 	shortName: 'jam',
-	url: dev ? 'http://localhost:5173' : 'https://jaiminpatel.dev',
+	url: dev ? 'http://localhost:5173' : 'https://www.jaimin-patel.me',
 	description:
-		"I'm a first-year Computing and Financial Management (CFM) student at UWaterloo and a Part-time Software Engineer at VantxLab. I specialize in building high-frequency trading systems and multi-agent AI architectures.",
+		"I'm a Computing and Financial Management student at UWaterloo and the founder of Polarline Markets. I build AI-native tools for investment research, fund operations, prediction markets, and systematic trading.",
 	tags: [
 		'Jaimin Patel',
+		'Founder',
 		'Software Engineer',
 		'Waterloo',
 		'Canada',
-		'VantxLab',
+		'Polarline Markets',
+		'Finny',
+		'HyperOdd',
 		'AlgoClash',
 		'CFM',
-		'High Frequency Trading',
+		'Prediction Markets',
+		'Systematic Trading',
 		'AI Agents',
 		'Full Stack Developer',
 		'Python',
@@ -67,8 +70,8 @@ const Site: Site = {
 		author: 'Jaimin Patel',
 		birthDate: '2005-01-01', // Placeholder date
 		worksFor: {
-			name: 'VantxLab',
-			url: 'https://vantxlab.com'
+			name: 'Polarline Markets',
+			url: 'https://www.polarline.io'
 		},
 		location: {
 			city: 'Waterloo',
@@ -83,7 +86,7 @@ const Site: Site = {
 	},
 	out: {
 		github: 'https://github.com/Jaiminp007',
-		linkedin: 'https://linkedin.com/in/jaimin-kamal-patel',
+		linkedin: 'https://www.linkedin.com/in/jaimin-patel007',
 		calcom: 'https://cal.com/jaimin-patel-e3fsrw',
 		wakatime: 'https://wakatime.com/@Jaimin_Patel',
 		bluesky: 'https://bsky.app/profile/jaimin.bsky.social', // Placeholder

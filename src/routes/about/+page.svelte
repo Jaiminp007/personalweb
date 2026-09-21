@@ -1,14 +1,5 @@
 <script lang="ts">
-	import {
-		IconUser,
-		IconBrandGithub,
-		IconBrandLinkedin,
-		IconMail,
-		IconDog,
-		IconStar,
-		IconRocket,
-		IconCode
-	} from '@tabler/icons-svelte';
+	import { IconBrandGithub, IconBrandLinkedin, IconMail, IconStar } from '@tabler/icons-svelte';
 	import Site from '$lib/config/common';
 	import AnchorHeader from '$lib/components/AnchorHeader.svelte';
 
@@ -23,12 +14,6 @@
 <svelte:head>
 	<title>About Me | Jaimin Patel</title>
 </svelte:head>
-
-{#snippet ExternalLink(href: str, text: str)}
-	<a {href} target="_blank" rel="noopener noreferrer" class="link">
-		{text}
-	</a>
-{/snippet}
 
 {#snippet GithubProject(title: str, href: str, stars: num)}
 	<a {href} id={title.toLowerCase()} target="_blank" rel="noopener noreferrer" class="link">
@@ -52,29 +37,42 @@
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
 			<div class="md:col-span-1">
 				<img
-					src="/images/avatar.webp"
-					alt="Jaimin Patel"
+					src="/images/jaimin-character.png"
+					alt="Pixel-art character portrait of Jaimin Patel"
 					class="h-auto w-full rounded-md object-cover shadow-lg transition-transform duration-300 hover:scale-[1.02]"
 				/>
 			</div>
 
 			<div class="space-y-4 md:col-span-2">
 				<p class="text-subtext0 text-base leading-relaxed">
-					<b>Hey!</b> I'm Jaimin Patel <a class="link" href={Site.out.github}>(@Jaiminp007)</a> — a Software
-					Engineering Intern at VantxLab and a Computing and Financial Management (CFM) student based
-					in Waterloo, Ontario.
+					<b>Hey!</b> I'm Jaimin Patel <a class="link" href={Site.out.github}>(@Jaiminp007)</a> — a
+					Computing and Financial Management (CFM) student at UWaterloo and the founder of
+					<a class="link" href="https://www.polarline.io/" target="_blank" rel="noopener"
+						>Polarline Markets</a
+					>.
 				</p>
 
 				<p class="text-subtext0 text-base leading-relaxed">
-					I specialize in building high-frequency trading systems, multi-agent AI architectures, and
-					full-stack web applications. Some of my notable projects include
+					I build AI-native tools for investment research, fund operations, prediction markets, and
+					systematic trading. Polarline’s Scout brings Front Office and Back Office workflows
+					together, while
+					<a class="link" href="https://github.com/finny-ai/finny" target="_blank" rel="noopener"
+						>Finny</a
+					> is an AI financial harness that researches strategies and tries to disprove them before they
+					meet real capital. I also worked as a Software Engineer Intern at HyperOdd, building prediction
+					market infrastructure.
+				</p>
+
+				<p class="text-subtext0 text-base leading-relaxed">
+					My earlier work includes
 					{@render GithubProject('AlgoClash', 'https://github.com/Jaiminp007/AlgoLive', 10)}, a
-					real-time AI trading arena, and
+					real-time AI trading arena;
 					{@render GithubProject(
 						'Limit Order Book',
 						'https://github.com/Jaiminp007/High-Performance-Limit-Order-Book',
 						5
-					)}, a C++17 matching engine.
+					)}, a C++17 matching engine; and reproducible research in the
+					<a class="link" href="/projects/research-open-source">Fly Ecosystem</a> project.
 				</p>
 
 				<p class="text-subtext0 text-base leading-relaxed">
@@ -137,25 +135,50 @@
 		<div class="space-y-6">
 			<div class="prose prose-sm text-subtext0 max-w-none">
 				<div class="mb-4">
-					<h3 class="text-text text-xl font-semibold">Software Engineering Intern (Part-time)</h3>
+					<h3 class="text-text text-xl font-semibold">Chief Executive Officer</h3>
 					<div class="text-subtext1 flex justify-between">
-						<span>VantxLab • Toronto, ON</span>
-						<span>Dec 2025 – Present</span>
+						<span>Polarline Markets • Toronto, ON</span>
+						<span>Aug 2026 – Present</span>
 					</div>
 					<ul class="mt-2 list-disc space-y-1 pl-5">
 						<li>
-							Developing <b>TheFamly</b>, a Duolingo-style family health app with an AI assistant
-							and analytics.
+							Building an AI-native operating system for investment research and fund operations.
 						</li>
 						<li>
-							Building health-data tracking features (lab reports, file uploads, and messages) with
-							searchable history and user insights.
-						</li>
-						<li>
-							Utilizing production workflows: GitHub issues, branching, PR reviews, and shipping
-							maintainable code with basic testing/logging.
+							Developing Scout Front Office and Back Office workflows around research, backtesting,
+							and reconciliation.
 						</li>
 					</ul>
+				</div>
+
+				<div class="mb-4">
+					<h3 class="text-text text-xl font-semibold">Software Engineer Intern</h3>
+					<div class="text-subtext1 flex justify-between">
+						<span>HyperOdd • Remote</span>
+						<span>May 2026 – Aug 2026</span>
+					</div>
+					<ul class="mt-2 list-disc space-y-1 pl-5">
+						<li>Built prediction market infrastructure for a crypto-native trading platform.</li>
+					</ul>
+				</div>
+
+				<div class="mb-4">
+					<h3 class="text-text text-xl font-semibold">Artificial Intelligence Research Intern</h3>
+					<div class="text-subtext1 flex justify-between">
+						<span>VantxLab • Toronto, ON</span>
+						<span>Dec 2025 – Apr 2026</span>
+					</div>
+					<ul class="mt-2 list-disc space-y-1 pl-5">
+						<li>Built AI-integrated health infrastructure and gamified analytics.</li>
+					</ul>
+				</div>
+
+				<div class="mb-4">
+					<p>
+						I’m interested in systems where the evidence matters as much as the output: market
+						microstructure, agent evaluation, data integrity, and software that can be inspected and
+						reproduced.
+					</p>
 				</div>
 			</div>
 		</div>

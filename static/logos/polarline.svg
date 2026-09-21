@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Polarline Markets</title>
+  <rect width="64" height="64" rx="16" fill="#1e1e2e"/>
+  <path d="M18 16h14c9 0 15 5 15 12s-6 12-15 12h-6v8h-8V16Zm8 7v10h5c5 0 8-2 8-5s-3-5-8-5h-5Z" fill="#f5e0dc"/>
+  <path d="M18 51h29" stroke="#f5e0dc" stroke-width="3" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,36 @@
+~~~
+title = "Research & Open Source"
+description = "Recent work across reproducible artificial-life research, agent tooling, and open-source software."
+date = "2026-09-12"
+published = true
+tags = ["Research", "Artificial Life", "Open Source", "Agent Tooling"]
+
+[[links]]
+text = "Fly Ecosystem"
+url = "https://github.com/Jaiminp007/fly-ecosystem"
+icon = "github"
+
+[[links]]
+text = "Hermes Agent"
+url = "https://github.com/Jaiminp007/hermes-agent"
+icon = "github"
+
+[[links]]
+text = "Finny / OpenCode"
+url = "https://github.com/finny-ai/finny"
+icon = "github"
+~~~
+
+# Research & Open Source
+
+Alongside product work, I’ve been exploring systems where the quality of the result depends on the quality of the process.
+
+## Fly Ecosystem
+
+An observable artificial-life ecosystem focused on inherited neural controllers, evolution, and reproducible experiments. The project is a way to study adaptive behavior as a system that can be inspected, replayed, and measured.
+
+## Agent tooling
+
+I also work in open-source agent tooling and MCP-compatible developer workflows, including the Hermes Agent ecosystem and the OpenCode-based Finny codebase.
+
+This thread connects the rest of my work: build the system, make the evidence visible, and leave behind tools that other people can inspect and extend.
