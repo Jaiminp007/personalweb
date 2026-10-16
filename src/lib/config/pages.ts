@@ -27,29 +27,32 @@ export interface ExperienceTimelineItem {
 	endDate?: string; // optional endDate. If present, it's a past role.
 	details?: string; // Optional details for expansion
 	logoScale?: number; // Optional logo scale multiplier
+	logoTreatment?: 'light-mark';
 }
 
 export const experienceTimeline: ExperienceTimelineItem[] = [
 	{
 		company: 'Polarline Markets',
-		role: 'Chief Executive Officer',
+		role: 'Founder',
 		url: 'https://www.polarline.io',
-		logoUrl: '/logos/polarline.svg',
+		logoUrl: '/logos/polarline-wordmark.png',
 		logoAlt: 'Polarline Markets logo',
 		startDate: '2026-08-01',
 		details: 'Building an AI-native operating system for investment research and fund operations.',
-		logoScale: 1.0
+		logoScale: 1.0,
+		logoTreatment: 'light-mark'
 	},
 	{
 		company: 'HyperOdd',
 		role: 'Software Engineer Intern',
 		url: 'https://hyperodd.com',
-		logoUrl: '/logos/hyperodd.svg',
+		logoUrl: '/logos/hyperodd-wordmark.png',
 		logoAlt: 'HyperOdd logo',
 		startDate: '2026-05-01',
 		endDate: '2026-08-31',
 		details: 'Built prediction market infrastructure.',
-		logoScale: 1.0
+		logoScale: 1.0,
+		logoTreatment: 'light-mark'
 	},
 	{
 		company: 'VantxLab',

@@ -10,7 +10,9 @@ interface NavItem {
 // Separate main nav items from the 'More' items
 export const mainNavItems: NavItem[] = [
 	{ title: 'About', href: '/about' },
-	{ title: 'Projects', href: '/projects' }
+	{ title: 'Experience', href: '/experience' },
+	{ title: 'Projects', href: '/projects' },
+	{ title: 'Game', href: '/game/index.html' }
 ];
 
 export const moreNavItems: NavItem[] = [{ title: 'Resume', href: '/resume.pdf', external: true }];

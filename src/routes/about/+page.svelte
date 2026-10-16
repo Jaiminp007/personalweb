@@ -126,64 +126,6 @@
 		</div>
 	</section>
 
-	<!-- Experience Section -->
-	<section class="space-y-6">
-		<AnchorHeader level="h2" class="flex items-center gap-3 text-2xl font-bold">
-			<span>Experience</span>
-		</AnchorHeader>
-
-		<div class="space-y-6">
-			<div class="prose prose-sm text-subtext0 max-w-none">
-				<div class="mb-4">
-					<h3 class="text-text text-xl font-semibold">Chief Executive Officer</h3>
-					<div class="text-subtext1 flex justify-between">
-						<span>Polarline Markets • Toronto, ON</span>
-						<span>Aug 2026 – Present</span>
-					</div>
-					<ul class="mt-2 list-disc space-y-1 pl-5">
-						<li>
-							Building an AI-native operating system for investment research and fund operations.
-						</li>
-						<li>
-							Developing Scout Front Office and Back Office workflows around research, backtesting,
-							and reconciliation.
-						</li>
-					</ul>
-				</div>
-
-				<div class="mb-4">
-					<h3 class="text-text text-xl font-semibold">Software Engineer Intern</h3>
-					<div class="text-subtext1 flex justify-between">
-						<span>HyperOdd • Remote</span>
-						<span>May 2026 – Aug 2026</span>
-					</div>
-					<ul class="mt-2 list-disc space-y-1 pl-5">
-						<li>Built prediction market infrastructure for a crypto-native trading platform.</li>
-					</ul>
-				</div>
-
-				<div class="mb-4">
-					<h3 class="text-text text-xl font-semibold">Artificial Intelligence Research Intern</h3>
-					<div class="text-subtext1 flex justify-between">
-						<span>VantxLab • Toronto, ON</span>
-						<span>Dec 2025 – Apr 2026</span>
-					</div>
-					<ul class="mt-2 list-disc space-y-1 pl-5">
-						<li>Built AI-integrated health infrastructure and gamified analytics.</li>
-					</ul>
-				</div>
-
-				<div class="mb-4">
-					<p>
-						I’m interested in systems where the evidence matters as much as the output: market
-						microstructure, agent evaluation, data integrity, and software that can be inspected and
-						reproduced.
-					</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
 	<!-- Education Section -->
 	<section class="space-y-6">
 		<AnchorHeader level="h2" class="flex items-center gap-3 text-2xl font-bold">

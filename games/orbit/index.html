@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#070c13" />
+    <meta
+      name="description"
+      content="Explore Jaimin Patel's universe. Pilot a spacecraft, discover three worlds, and find the projects behind them."
+    />
+    <title>Orbit — Jaimin Patel</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='9' fill='%23efb475'/%3E%3Cellipse cx='20' cy='20' rx='18' ry='6' fill='none' stroke='%23efb475' transform='rotate(-30 20 20)'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <canvas
+      id="space-scene"
+      aria-label="Interactive solar system. Use the destination menu for accessible navigation."
+    ></canvas>
+    <div id="fallback" hidden>
+      <h1>Your universe is still here.</h1>
+      <p>
+        3D rendering is unavailable in this browser. Explore the destinations
+        below.
+      </p>
+      <a href="./planets/about.html">About Jaimin ↗</a
+      ><a href="./planets/projects.html">Projects ↗</a
+      ><a href="./planets/contact.html">Contact ↗</a>
+    </div>
+    <header class="topbar">
+      <a
+        class="brand"
+        data-home
+        href="https://www.jaimin-patel.me/"
+        aria-label="Jaimin Patel's main portfolio"
+        ><span class="orbit-icon">◉</span> ORBIT<span
+          class="brand-divider"
+        ></span
+        ><span class="brand-name">JAIMIN PATEL</span></a
+      >
+      <div class="top-actions"><button id="find-signal" class="subtle">Find signal</button><button id="challenges-button" class="subtle">Challenges</button>
+        <span class="live"><i></i> EXPLORER ONLINE</span
+        ><button
+          id="help-button"
+          class="icon-button"
+          aria-label="Flight controls"
+        >
+          ?</button
+        ><button
+          id="settings-button"
+          class="icon-button"
+          aria-label="Graphics settings"
+        >
+          ⚙</button
+        ><a class="text-link" data-home href="https://www.jaimin-patel.me/"
+          >Text version ↗</a
+        >
+      </div>
+    </header>
+    <main id="hud">
+      <section id="intro" class="intro">
+        <div class="eyebrow">
+          <span></span> A SMALL UNIVERSE. A FEW BIG IDEAS.
+        </div>
+        <h1>Take the<br />scenic route<span>.</span></h1>
+        <p>
+          A different way to get to know me.<br />Pilot a ship. Discover my
+          work. Get a little lost.
+        </p>
+        <button id="launch" class="primary">
+          Begin exploration <span>↗</span>
+        </button>
+        <div class="intro-foot">
+          <span>03 WORLDS TO DISCOVER</span><span>NO DOWNLOAD. JUST FLY.</span>
+        </div>
+      </section>
+      <aside class="destinations" aria-label="Destinations">
+        <div class="section-label">YOUR DESTINATIONS <span>01 — 03</span></div>
+        <div id="destination-list"></div>
+        <div class="mission-progress">
+          <span>EXPLORATION LOG</span
+          ><strong id="progress">0 / 3 worlds</strong>
+          <div><i id="progress-bar"></i></div>
+        </div>
+      </aside>
+      <section id="flight-status" class="flight-status" hidden>
+        <div class="eyebrow" id="flight-mode">FREE FLIGHT</div>
+        <h2 id="target-name">The open universe</h2>
+        <p id="target-info">Choose a world, or find your own way.</p>
+        <button id="dock" class="primary" hidden>
+          Explore this world <kbd>F</kbd></button
+        ><button id="cancel-course" class="subtle" hidden>
+          Cancel guided flight
+        </button>
+      </section>
+      <div class="reticle" id="reticle" hidden><i></i><span></span></div>
+      <div class="planet-label" id="planet-label" hidden></div>
+      <aside class="radar">
+        <div class="section-label">SYSTEM MAP <span>LIVE</span></div>
+        <svg
+          viewBox="0 0 180 140"
+          role="img"
+          aria-label="Solar system navigation map"
+        >
+          <ellipse cx="90" cy="70" rx="65" ry="39" />
+          <ellipse cx="90" cy="70" rx="42" ry="25" />
+          <circle cx="90" cy="70" r="4" class="map-sun" />
+          <g id="map-worlds"></g>
+          <path id="map-ship" d="M0 -5 L3 4 L0 2 L-3 4Z" />
+        </svg>
+        <div>
+          <span class="signal-dot"></span>
+          <span id="signals">0 / 6 signals recovered</span>
+        </div>
+      </aside>
+      <div class="bottom-bar">
+        <div class="coordinates">
+          <span class="section-label">SHIP TELEMETRY</span>
+          <div>
+            <b id="speed">000</b><small>m/s</small
+            ><span class="telemetry-separator"></span
+            ><span id="altitude">ALT +000</span>
+          </div>
+        </div>
+        <div class="control-hints">
+          <span><kbd>W</kbd><kbd>S</kbd> thrust</span
+          ><span><kbd>A</kbd><kbd>D</kbd> steer</span
+          ><span><kbd>SPACE</kbd><kbd>C</kbd> up / down</span
+          ><span><kbd>SHIFT</kbd> boost</span
+          ><button id="reset" class="subtle">↺ Reset flight</button>
+        </div>
+        <div class="sector">
+          <span class="section-label">SOL SYSTEM</span
+          ><span id="quality-label">AUTO QUALITY</span>
+        </div>
+      </div>
+      <div class="touch-controls" aria-label="Touch flight controls">
+        <div>
+          <button data-control="left" aria-label="Turn left">←</button
+          ><button data-control="forward" aria-label="Thrust forward">↑</button
+          ><button data-control="right" aria-label="Turn right">→</button
+          ><button data-control="backward" aria-label="Reverse">↓</button>
+        </div>
+        <div>
+          <button data-control="up" aria-label="Ascend">＋</button
+          ><button data-control="down" aria-label="Descend">−</button
+          ><button data-control="boost" aria-label="Boost">⚡</button>
+        </div>
+      </div>
+    </main>
+    <div id="landing-sequence" hidden aria-live="polite">
+      <span>Surface approach</span>
+      <h2 id="landing-name"></h2>
+      <p id="landing-phase"></p>
+      <div class="landing-track"><i id="landing-fill"></i></div>
+    </div>
+    <div id="challenge-status" hidden><span id="challenge-text"></span><button id="end-challenge" aria-label="End challenge">✕</button></div>
+<dialog id="challenges" class="small-dialog"><button class="close" data-close aria-label="Close challenges">✕</button><h2>A little detour?</h2><p>Pick a mini game. Timers pause while you read a destination or open settings.</p><div class="challenge-options"><button data-challenge="signals"><strong>Signal sprint</strong><span>Recover 3 gold signals in 60 seconds. Fly through their glowing rings. Use boost to close the gap.</span></button><button data-challenge="landing"><strong>Planet hopper</strong><span>Land on all 3 worlds in 90 seconds. Pick a destination, fly there, and press F to start your descent.</span></button></div></dialog>
+<div id="crash" hidden role="status"><span>Solar impact</span><h2>Too close to the sun.</h2><p>Ship lost. Launching a new one…</p></div>
+<div id="signal-label" hidden></div>
+<div id="toast" role="status" aria-live="polite"></div>
+    <dialog id="dossier" class="dossier">
+      <button class="close" data-close aria-label="Close destination">✕</button>
+      <div id="dossier-content"></div>
+    </dialog>
+    <dialog id="help" class="small-dialog">
+      <button class="close" data-close aria-label="Close controls">✕</button>
+      <div class="eyebrow">PILOT'S HANDBOOK</div>
+      <h2>A little room to explore.</h2>
+      <p>
+        Discover all three worlds and recover the six glowing navigation signals
+        near them. Your discoveries are saved on this device.
+      </p>
+      <dl>
+        <dt>W / S or ↑ / ↓</dt>
+        <dd>Forward / reverse thrust</dd>
+        <dt>A / D or ← / →</dt>
+        <dd>Turn left / right</dd>
+        <dt>Space / C</dt>
+        <dd>Ascend / descend</dd>
+        <dt>Shift</dt>
+        <dd>Boost while thrusting</dd>
+        <dt>Drag the scene</dt>
+        <dd>Change your heading and pitch</dd>
+        <dt>F</dt>
+        <dd>Explore a nearby world</dd>
+        <dt>R</dt>
+        <dd>Reset flight position</dd>
+        <dt>Escape</dt>
+        <dd>Close a panel</dd>
+      </dl>
+      <p>
+        Select a destination for guided flight, or use its ↗ button to read
+        immediately. On touchscreens, use the on-screen controls.
+      </p>
+    </dialog>
+    <dialog id="settings" class="small-dialog">
+      <button class="close" data-close aria-label="Close settings">✕</button>
+      <div class="eyebrow">FLIGHT COMPUTER</div>
+      <h2>Make yourself at home.</h2>
+      <label class="setting"
+        >Graphics quality<select id="quality" aria-label="Graphics quality">
+          <option value="auto">Auto · adapts to your device</option>
+          <option value="high">High · sharper detail</option>
+          <option value="low">Low · lighter rendering</option>
+        </select></label
+      ><label class="setting"
+        >Flight sensitivity<input
+          type="range"
+          id="sensitivity"
+          min="0.5"
+          max="1.8"
+          step="0.1"
+          value="1"
+          aria-label="Flight sensitivity" /></label
+      ><label class="setting check"
+        >Reduced motion<input id="reduced-motion" type="checkbox"
+      /></label>
+      <p>
+        Reduced motion removes engine pulsing, sun animation, and camera
+        banking. The game pauses while a panel is open.
+      </p>
+      <button id="clear-progress" class="subtle">
+        Reset exploration progress
+      </button>
+    </dialog>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

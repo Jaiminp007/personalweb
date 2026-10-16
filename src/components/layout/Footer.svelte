@@ -9,7 +9,7 @@
 	const { value } = $props();
 
 	const year = new Date().getFullYear();
-	const shortSha = env.PUBLIC_COMMIT_SHA ? env.PUBLIC_COMMIT_SHA.substring(0, 7) : 'dev';
+	const shortSha = env.PUBLIC_COMMIT_SHA ? env.PUBLIC_COMMIT_SHA.substring(0, 7) : '';
 	const commitLinkUrl = env.PUBLIC_COMMIT_SHA
 		? `${Site.repo.commitBaseUrl}${env.PUBLIC_COMMIT_SHA}`
 		: '#';
@@ -66,27 +66,9 @@
 	>
 		<div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 md:justify-start">
 			<span class="whitespace-nowrap">© {year} Jaimin Patel</span>
-
-			<span class="text-surface0 hidden md:inline">-</span>
-
-			<div class="flex items-center gap-1 whitespace-nowrap" title="Service Status">
-				<span class="relative mr-1.5 flex h-3 w-3">
-					<span
-						class="animate-duration-[2000ms] bg-green/75 absolute inline-flex h-full w-full animate-ping rounded-full"
-					></span>
-					<span class="bg-green relative inline-flex h-3 w-3 rounded-full"></span>
-				</span>
-				<span class="text-subtext1 text-sm font-medium">Deploying Agents on Binance</span>
-			</div>
 		</div>
 
 		<div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 md:justify-end">
-			<div class="flex items-center gap-1.5" title="Listening to">
-				<span class="text-subtext1 text-sm">Listening to:</span>
-				<span class="text-accent text-sm font-medium">Drake</span>
-			</div>
-			<span class="text-surface0 hidden sm:inline">-</span>
-
 			<div class="flex items-center gap-1.5" title="How long you have been surfing my site">
 				<IconClock size={14} class="text-subtext1" />
 				<span class="text-accent font-mono text-xs">{timeOnSite}</span>
@@ -102,8 +84,8 @@
 				{value} views
 			</a>
 
-			<span class="text-surface0 hidden sm:inline">-</span>
 			{#if env.PUBLIC_COMMIT_SHA && env.PUBLIC_COMMIT_SHA !== 'dev'}
+				<span class="text-surface0 hidden sm:inline">-</span>
 				<a
 					href={commitLinkUrl}
 					target="_blank"
@@ -114,14 +96,8 @@
 					<IconGitCommit size={18} stroke={1.5} class="flex-shrink-0" />
 					<span>{shortSha}</span>
 				</a>
-			{:else}
-				<span class="text-overlay1 flex items-center gap-x-1" title="Development Build">
-					<IconGitCommit size={18} stroke={1.5} class="flex-shrink-0" />
-					<span>{shortSha}</span>
-				</span>
+				<span class="text-surface0 hidden sm:inline">-</span>
 			{/if}
-
-			<span class="text-surface0 hidden sm:inline">-</span>
 
 			<div class="flex items-center gap-x-3">
 				{#each Socials.filter((item) => item.footer) as item (item.url)}

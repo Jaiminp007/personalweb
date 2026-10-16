@@ -21,11 +21,18 @@
 		{#each mainNavItems as item (item.title)}
 			<a
 				href={item.href}
+				data-sveltekit-reload={item.href.startsWith('/game/')}
 				target={item.external ? '_blank' : undefined}
 				rel={item.external ? 'noopener noreferrer' : undefined}
-				class="text-text hover:text-accent rounded px-3 py-2 text-sm font-medium transition-colors duration-150"
+				class={item.href.startsWith('/game/')
+					? 'game-nav-link rounded px-3 py-2 text-sm font-semibold'
+					: 'text-text hover:text-accent rounded px-3 py-2 text-sm font-medium transition-colors duration-150'}
 			>
-				{item.title}
+				{#if item.href.startsWith('/game/')}
+					<span class="game-nav-label">{item.title}</span>
+				{:else}
+					{item.title}
+				{/if}
 			</a>
 		{/each}
 		<button

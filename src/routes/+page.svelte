@@ -1,12 +1,9 @@
 <script lang="ts">
 	import LinkWithIcon from '$components/LinkWithIcon.svelte';
-	import Featured, { type FeaturedProject } from '$components/layout/Featured.svelte';
 	import {
 		IconArrowRight,
 		IconExternalLink,
 		IconArticle,
-		IconCode,
-		IconRocket,
 		IconCalendarEvent,
 		IconActivity
 	} from '@tabler/icons-svelte';
@@ -21,16 +18,11 @@
 	import type { CommitData } from '$lib/api/commits';
 
 	type PageData = {
-		featuredProjects: FeaturedProject[];
 		commitData: CommitData;
-		latestPosts: {
-			slug: string;
-			metadata: { title: { text: string; config?: string }; published_at: string };
-		}[];
+		polarlinePosts: { title: string; href: string; publishedAt: string }[];
 	};
 
 	let { data }: { data: PageData } = $props();
-	let isNameHovered = $state(false);
 	const langTotal = $derived((data.commitData?.languages || []).reduce((a, l) => a + l.size, 0));
 </script>
 
@@ -38,49 +30,20 @@
 	<!-- Section 1: Hero / Introduction -->
 	<section class="space-y-5 px-4 md:px-0">
 		<h1 class="text-3xl font-bold md:text-4xl">
-			Hey! I'm
-			<span class="text-accent">
-				<span class="sr-only select-none">Jaimin</span>
-				<span>
-					<span aria-hidden="true">J</span><span
-						class="decoration-accent/30 underline decoration-dashed opacity-70"
-						onmouseenter={() => (isNameHovered = true)}
-						onmouseleave={() => (isNameHovered = false)}
-						onfocus={() => (isNameHovered = true)}
-						onblur={() => (isNameHovered = false)}
-						tabindex="0"
-						role="button"
-						aria-label="Hover or focus to see a fun fact about my name">ai</span
-					><span aria-hidden="true">min</span><span
-						class={`pointer-events-none inline-flex overflow-hidden align-baseline whitespace-nowrap transition-all duration-500 ease-out select-none ${
-							isNameHovered ? 'max-w-[7ch] opacity-100' : 'max-w-0 opacity-0'
-						}`}>&nbsp;'JAY-min'</span
-					>
-				</span>
-				<span>Patel</span>
-			</span>
+			Hey! I'm <span class="text-accent">Jaimin Patel</span>
 		</h1>
 		<!--note to self: Could be improved via Senior SWE (Fullstack, AI, Systems) @ Stan.. -->
 		<p class="text-subtext0 max-w-prose text-lg leading-relaxed">
-			I'm a Computing and Financial Management (CFM) student at <a
+			I study Computing and Financial Management at <a
 				class="link text-accent/85"
 				target="_blank"
 				rel="noopener"
 				href="https://uwaterloo.ca/computing-financial-management/">UWaterloo</a
 			>
-			and the founder of
+			and founded
 			<a class="link text-accent/85" target="_blank" rel="noopener" href="https://www.polarline.io/"
 				>Polarline Markets</a
-			>. I build AI-native tools for investment research and fund operations, including Scout and
-			<a
-				class="link text-accent/85"
-				target="_blank"
-				rel="noopener"
-				href="https://github.com/finny-ai/finny">Finny</a
-			>, an AI financial harness for systematic trading. Most recently, I worked at
-			<a class="link text-accent/85" target="_blank" rel="noopener" href="https://hyperodd.com/"
-				>HyperOdd</a
-			> on prediction market infrastructure.
+			>, where I build AI tools for investment research and fund operations.
 		</p>
 		<div class="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2">
 			{#each Home.socialLinks as link (link.href)}
@@ -111,81 +74,6 @@
 
 	<!-- Section: Minimal Experience Row -->
 	<Experience />
-
-	<!-- Section: Current focus -->
-	<section class="px-4 md:px-0">
-		<div class="mb-7 flex flex-wrap items-end justify-between gap-4">
-			<div class="space-y-2">
-				<p class="text-accent text-xs font-semibold tracking-[0.24em] uppercase">Current focus</p>
-				<h2 class="text-2xl font-semibold md:text-3xl">
-					Building systems that hold up under pressure.
-				</h2>
-			</div>
-			<p class="text-subtext0 max-w-md text-sm leading-relaxed">
-				From market research to agent tooling, I care about the layer between a promising idea and
-				something people can actually trust.
-			</p>
-		</div>
-
-		<div class="grid grid-cols-1 gap-5 md:grid-cols-3">
-			<article
-				class="border-surface0 bg-base rounded-xl border p-5 shadow-lg transition-transform duration-300 hover:-translate-y-1"
-			>
-				<div class="text-accent mb-5 flex items-center justify-between">
-					<span class="text-xs font-semibold tracking-[0.18em] uppercase">01 / Polarline</span>
-					<IconRocket size={18} />
-				</div>
-				<h3 class="text-text mb-2 text-xl font-semibold">Scout</h3>
-				<p class="text-subtext0 mb-5 text-sm leading-relaxed">
-					Front Office and Back Office workflows for investment research, strategy development,
-					backtesting, and reconciliation.
-				</p>
-				<a href="/projects/polarline-markets" class="link inline-flex items-center gap-1 text-sm">
-					Read the build <IconArrowRight size={15} />
-				</a>
-			</article>
-
-			<article
-				class="border-surface0 bg-base rounded-xl border p-5 shadow-lg transition-transform duration-300 hover:-translate-y-1"
-			>
-				<div class="text-accent mb-5 flex items-center justify-between">
-					<span class="text-xs font-semibold tracking-[0.18em] uppercase">02 / Finny</span>
-					<IconActivity size={18} />
-				</div>
-				<h3 class="text-text mb-2 text-xl font-semibold">Try to disprove it.</h3>
-				<p class="text-subtext0 mb-5 text-sm leading-relaxed">
-					An AI financial harness that turns plain-English ideas into research, code, and
-					evidence-bound verdicts.
-				</p>
-				<a href="/projects/finny" class="link inline-flex items-center gap-1 text-sm">
-					Explore Finny <IconArrowRight size={15} />
-				</a>
-			</article>
-
-			<article
-				class="border-surface0 bg-base rounded-xl border p-5 shadow-lg transition-transform duration-300 hover:-translate-y-1"
-			>
-				<div class="text-accent mb-5 flex items-center justify-between">
-					<span class="text-xs font-semibold tracking-[0.18em] uppercase">03 / Research</span>
-					<IconCode size={18} />
-				</div>
-				<h3 class="text-text mb-2 text-xl font-semibold">Open systems.</h3>
-				<p class="text-subtext0 mb-5 text-sm leading-relaxed">
-					Reproducible artificial-life experiments and open-source agent tooling across Fly
-					Ecosystem, Hermes Agent, and OpenCode-based work.
-				</p>
-				<a
-					href="/projects/research-open-source"
-					class="link inline-flex items-center gap-1 text-sm"
-				>
-					See the thread <IconArrowRight size={15} />
-				</a>
-			</article>
-		</div>
-	</section>
-
-	<!-- Section: Featured Projects -->
-	<Featured projects={data.featuredProjects} maxProjects={2} />
 
 	<!-- Section: Bento Grid Container -->
 	<section class="px-4 md:px-0">
@@ -311,56 +199,57 @@
 					{/if}
 				</div>
 			</div>
-			<!-- Box 6: Latest Posts -->
+			<!-- Box 6: Polarline Blog -->
 			<div
 				class="border-surface0 bg-base rounded-xl border p-4 shadow-lg sm:col-span-2 lg:col-span-2"
 			>
 				<div class="text-text mb-3 flex items-center justify-between gap-2 text-sm">
 					<h3 class="flex items-center gap-2 font-semibold">
 						<IconArticle size={14} class="text-accent" />
-						<span>Latest Posts</span>
+						<span>Polarline Blog</span>
 					</h3>
 					<a
-						href="/posts"
-						aria-label="View all posts"
+						href="https://www.polarline.io/blog"
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Open the Polarline Blog"
 						class=" text-accent/80 transition-transform duration-500 ease-in hover:translate-x-0.5 hover:-translate-y-0.5"
 					>
 						<IconExternalLink size={18} />
 					</a>
 				</div>
-
-				{#if data.latestPosts.length > 0}
+				{#if data.polarlinePosts.length > 0}
 					<ul class="list-none space-y-2">
-						{#each data.latestPosts as post (post.slug)}
-							{@const words = post.metadata.title.text.split(' ')}
-							{@const safePath = post.slug.split('/').pop() || post.slug}
+						{#each data.polarlinePosts as post (post.href)}
 							<li>
 								<a
-									href={'/posts/' + post.slug}
+									href={post.href}
+									target="_blank"
+									rel="noopener noreferrer"
 									class="text-subtext0 hover:text-accent flex min-w-0 items-center gap-2 text-sm"
 								>
-									<span class="min-w-0 flex-1 truncate">
-										{#each words as word, i (word + i)}
-											{@const normalized = word.toLowerCase().replace(/[^a-z0-9\s-_]/g, '')}
-											{@const vtName = `_${safePath}__${normalized}`}
-											<span style="view-transition-name: {vtName};">
-												{word}{i < words.length - 1 ? ' ' : ''}
-											</span>
-										{/each}
+									<span class="min-w-0 flex-1 truncate">{post.title}</span>
+									<span class="text-surface1 mx-2 flex-shrink-0 text-xs">–</span>
+									<span class="text-subtext1 flex-shrink-0 text-xs whitespace-nowrap">
+										{formatDate(post.publishedAt, { shortMonth: true })}
 									</span>
-
-									{#if post.metadata.published_at}
-										<span class="text-surface1 mx-2 flex-shrink-0 text-xs">–</span>
-										<span class="text-subtext1 flex-shrink-0 text-xs whitespace-nowrap">
-											{formatDate(post.metadata.published_at, { shortMonth: true })}
-										</span>
-									{/if}
 								</a>
 							</li>
 						{/each}
 					</ul>
 				{:else}
-					<p class="text-subtext1 text-xs italic">No posts yet.</p>
+					<a
+						href="https://www.polarline.io/blog"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group text-accent inline-flex items-center gap-1 text-sm hover:underline"
+					>
+						<span>Read the blog</span>
+						<IconArrowRight
+							size={15}
+							class="transition-transform duration-200 group-hover:translate-x-0.5"
+						/>
+					</a>
 				{/if}
 			</div>
 		</div>

@@ -105,3 +105,77 @@
 @utility link {
 	@apply text-accent hover:bg-accent hover:text-mantle decoration-dashed underline-offset-4 duration-200 not-hover:underline;
 }
+
+/* Orbit's entry point glows consistently in the desktop nav and mobile sidebar. */
+.game-nav-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	border: 1px solid rgb(125 211 252 / 36%);
+	background: linear-gradient(115deg, rgb(56 189 248 / 12%), rgb(167 139 250 / 13%));
+	box-shadow:
+		inset 0 1px 0 rgb(255 255 255 / 9%),
+		0 0 14px rgb(56 189 248 / 9%);
+	color: #a5f3fc;
+	text-decoration: none;
+	transition:
+		transform 200ms ease,
+		border-color 200ms ease,
+		background 200ms ease,
+		box-shadow 200ms ease;
+}
+
+.game-nav-link::before {
+	content: '✦';
+	color: #67e8f9;
+	font-size: 0.8em;
+	line-height: 1;
+	text-shadow: 0 0 9px rgb(103 232 249 / 80%);
+	transition:
+		transform 250ms ease,
+		color 250ms ease;
+}
+
+.game-nav-label {
+	background: linear-gradient(90deg, #67e8f9, #a5b4fc 55%, #f0abfc);
+	background-size: 180% 100%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: background-position 300ms ease;
+}
+
+.game-nav-link:hover {
+	transform: translateY(-2px);
+	border-color: rgb(165 180 252 / 70%);
+	box-shadow:
+		inset 0 1px 0 rgb(255 255 255 / 16%),
+		0 0 18px rgb(129 140 248 / 30%);
+}
+
+.game-nav-link:hover::before {
+	transform: rotate(75deg) scale(1.25);
+	color: #e9d5ff;
+}
+
+.game-nav-link:hover .game-nav-label {
+	background-position: 100% 0;
+}
+
+.game-nav-link:focus-visible {
+	outline: 2px solid #67e8f9;
+	outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.game-nav-link,
+	.game-nav-link::before,
+	.game-nav-label {
+		transition: none;
+	}
+
+	.game-nav-link:hover,
+	.game-nav-link:hover::before {
+		transform: none;
+	}
+}

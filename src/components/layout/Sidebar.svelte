@@ -38,13 +38,6 @@
 		</button>
 	</div>
 
-	<div class="border-surface0 flex-shrink-0 border-b p-4">
-		<div class="pb-1">
-			<ThemeSelector />
-		</div>
-		<ColorSelector />
-	</div>
-
 	<nav class="flex-1 overflow-y-auto p-4">
 		<ul class="space-y-2" role="list">
 			{#each mainNavItems as item (item.title)}
@@ -52,13 +45,20 @@
 				<li>
 					<a
 						href={item.href}
+						data-sveltekit-reload={item.href.startsWith('/game/')}
 						target={item.external ? '_blank' : undefined}
 						rel={item.external ? 'noopener noreferrer' : undefined}
-						class="hover:bg-surface0 focus:bg-surface1 block rounded p-2 transition-colors duration-150 focus:outline-none"
+						class={item.href.startsWith('/game/')
+							? 'game-nav-link w-full rounded p-2 font-semibold'
+							: 'hover:bg-surface0 focus:bg-surface1 block rounded p-2 transition-colors duration-150 focus:outline-none'}
 						aria-current={isActive ? 'page' : undefined}
 						onclick={closeSidebar}
 					>
-						{item.title}
+						{#if item.href.startsWith('/game/')}
+							<span class="game-nav-label">{item.title}</span>
+						{:else}
+							{item.title}
+						{/if}
 					</a>
 				</li>
 			{/each}
@@ -72,6 +72,7 @@
 				<li>
 					<a
 						href={item.href}
+						data-sveltekit-reload={item.href.startsWith('/game/')}
 						target={item.external ? '_blank' : undefined}
 						rel={item.external ? 'noopener noreferrer' : undefined}
 						class="hover:bg-surface0 focus:bg-surface1 block rounded p-2 transition-colors duration-150 focus:outline-none"
@@ -84,4 +85,11 @@
 			{/each}
 		</ul>
 	</nav>
+
+	<div class="border-surface0 flex-shrink-0 border-t p-4">
+		<div class="pb-1">
+			<ThemeSelector />
+		</div>
+		<ColorSelector />
+	</div>
 </aside>

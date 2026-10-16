@@ -42,7 +42,7 @@
 
 				mapInstance = L.map(mapContainer, {
 					zoomControl: false,
-					attributionControl: false,
+					attributionControl: true,
 					dragging: true,
 					scrollWheelZoom: true,
 					doubleClickZoom: true,
@@ -51,9 +51,9 @@
 					touchZoom: true
 				}).setView([43.4643, -80.5204], 11);
 
-				L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+				L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 					maxZoom: 19,
-					attribution: '',
+					attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
 					keepBuffer: 4,
 					updateWhenIdle: false,
 					updateWhenZooming: false
@@ -131,5 +131,15 @@
 
 	:global(.leaflet-pane) {
 		background: var(--color-base) !important;
+	}
+
+	:global(.leaflet-control-attribution) {
+		background: rgb(30 30 46 / 85%);
+		color: var(--color-subtext1);
+		font-size: 9px;
+	}
+
+	:global(.leaflet-control-attribution a) {
+		color: var(--color-accent);
 	}
 </style>
