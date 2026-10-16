@@ -27,10 +27,16 @@ Alongside product work, I’ve been exploring systems where the quality of the r
 
 ## Fly Ecosystem
 
-An observable artificial-life ecosystem focused on inherited neural controllers, evolution, and reproducible experiments. The project is a way to study adaptive behavior as a system that can be inspected, replayed, and measured.
+Fly Ecosystem is an artificial-life research project with two distinct experimental tracks. The local observatory integrates the MaleCNS v1.0 connectome, a graph of 166,700 neurons, into an arena where engineered visual stimuli drive annotated sensory cells and neural activity is decoded into movement and feeding. Offspring inherit the full graph topology and selected gain traits. The retina adapter, body decoder, physiology, and reproduction rules are engineered model assumptions; this is a research instrument, not a biological emulation.
+
+The repository also keeps a compact evolving-agent model for controlled comparisons. Its changing-world experiments use four repeating conditions—baseline renewal, shifting food availability, lean resources, and a moving stress zone—and record population, births, deaths, and food use. The results are descriptive: populations and environments change together, so phase differences do not establish that agents adapted.
+
+The project now includes a local neural-ecosystem lab for managing independent habitats, inspecting agents and networks, saving checkpoints, and forking paused worlds to compare interventions. In the first matched learning campaign, six habitats completed one 720-second cycle and recorded 822 births. Learning changed acquired weights, but birth totals were nearly even between learning and control, with outcomes varying by seed; the campaign did not show a consistent learning advantage. The next research goal is useful learning and memory on unseen, unpredictable tasks.
+
+The public hosted observatory remains a legacy compact-model deployment, separate from the local MaleCNS integration and the newer habitat platform. Results from one track should not be attributed to another.
 
 ## Agent tooling
 
-I also work in open-source agent tooling and MCP-compatible developer workflows, including the Hermes Agent ecosystem and the OpenCode-based Finny codebase.
+I also work in open-source agent tooling and MCP-compatible developer workflows, including the Hermes Agent ecosystem and the OpenCode-based Finny codebase. Across these projects, I focus on inspectable state, reproducible runs, and clear limits on what the evidence supports.
 
 This thread connects the rest of my work: build the system, make the evidence visible, and leave behind tools that other people can inspect and extend.

@@ -27,7 +27,10 @@
 							<img
 								src={item.logoUrl}
 								alt={item.logoAlt}
-								class="flex max-h-8 min-h-7 w-auto min-w-6 grow-9 object-contain"
+								class="h-8 w-8 shrink-0 rounded-md object-cover object-left {item.logoTreatment ===
+									'light-mark'
+									? 'brightness-0 invert'
+									: ''}"
 								style={item.logoScale ? `transform: scale(${item.logoScale})` : ''}
 							/>
 							<span class="text-subtext1 group-hover:text-text group-focus-visible:text-text">
@@ -54,7 +57,10 @@
 								<img
 									src={item.logoUrl}
 									alt={item.logoAlt}
-									class="h-10 w-auto max-w-[4rem] flex-shrink-0 rounded-md object-contain p-1"
+									class="h-10 w-10 flex-shrink-0 rounded-md object-cover object-left p-1 {item.logoTreatment ===
+										'light-mark'
+										? 'brightness-0 invert'
+										: ''}"
 									style={item.logoScale ? `transform: scale(${item.logoScale})` : ''}
 								/>
 								<div>
